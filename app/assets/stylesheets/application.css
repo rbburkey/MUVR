@@ -13,3 +13,84 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  height: 100%;
+ }
+
+
+ body {
+  height: 100%
+ }
+
+ .footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+ }
+
+ /* ## NAVBAR CUSTOMISATIONS ## */
+
+ ul.nav  a:hover { color: #fc9f00  !important; }
+
+ ul.nav  a {
+  color: #dadada  !important;
+  font-size: 14px;
+ }
+
+ .navbar-brand { color: #fc9f00  !important; }
+
+ .navbar {
+  margin-bottom: 0px;
+  background-color: #000;
+ }
+
+ .navbar-container {
+  max-width: 640px;
+  margin: 0 auto;
+ }
+
+ /* ## DEVISE CUSTOMISATIONS ## */
+
+
+ .registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-position: left top;
+  background-image: url("/assets/box.jpg");
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ }
+
+ .login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-position: left top;
+  background-image: url("/assets/box.jpg");
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ }
+
+ .log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+ }
+
+ .log-in-left {
+  margin-left: auto;
+  margin-right: auto;
+  text-align:left;
+  border: none;
+ }
+
+ .panel {
+  margin-top: 60px;
+  border-radius: 8px;
+ }
