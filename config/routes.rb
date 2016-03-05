@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'movers/portal'
+
+  get 'movers/profile'
+
+  get 'users/portal'
+
+  get 'users/profile'
+
+  resources :jobs
   devise_for :movers
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
