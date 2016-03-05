@@ -1,10 +1,19 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_filter :client_only, only:[:new, :create, :update, :destroy, :edit]
+
+
 
   # GET /jobs
   # GET /jobs.json
   def index
     @jobs = Job.all
+  end
+
+  def client_only
+    unless user_signed_in?
+      redirect_to :jobs, :alert => "Access denied."
+    end
   end
 
   # GET /jobs/1
