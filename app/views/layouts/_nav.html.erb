@@ -9,20 +9,20 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <%if user_signed_in?%>
-        <li><%= link_to "Home" %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Portal", users_portal_path %></li>
         <li><%= link_to "Profile", users_profile_path %></li>
-        <li><%= link_to "Find a Mover" %></li>
+        <li><%= link_to "Find a Mover"  %></li>
         <li><%= link_to "Log Out User", destroy_user_session_path, method: :delete%></li>
         <li><%= link_to "Sign Up Movr", new_mover_registration_path  %></li>
         <%elsif mover_signed_in?%>
-        <li><%= link_to "Home" %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Portal", movers_portal_path %></li>
         <li><%= link_to "See Jobs", jobs_path %></li>
         <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
         <li><%= link_to "Sign Up User", new_user_registration_path  %></li>
         <% else %>
-        <li><%= link_to "Home" %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Signin User", new_user_session_path  %></li>
         <li><%= link_to "Signin Movr", new_mover_session_path  %></li>
         <li><%= link_to "Sign Up Movr", new_mover_registration_path  %></li>
