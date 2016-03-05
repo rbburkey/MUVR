@@ -25,6 +25,8 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    # to index the user_id column in jobs table
+    @job.user_id = current_user.id
 
     respond_to do |format|
       if @job.save
