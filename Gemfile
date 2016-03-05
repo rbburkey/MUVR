@@ -5,6 +5,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'paperclip', '~> 4.2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
