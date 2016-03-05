@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'users/profile'
 
+  get 'users/' => 'users#index'
   resources :jobs
   devise_for :movers
   devise_for :users
