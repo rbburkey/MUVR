@@ -1,14 +1,12 @@
 class UsersController < ApplicationController
   def portal
+    @user = current_user
   end
 
   def profile
     @user = current_user
   end
 
-  def index
-    @users = User.all
-  end
 
 
   def create
