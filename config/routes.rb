@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   get 'users/profile'
 
+  devise_for :users, controllers: {sessions: "sessions"}
+  devise_for :movers, :controllers => { registrations: 'registrations' }
+
   get 'users/' => 'users#index'
   resources :jobs
-  devise_for :movers
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
