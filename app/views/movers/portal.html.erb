@@ -4,3 +4,7 @@
 <h2><%= "#{@mover.first_name}'s" + " Portal"  %></h2>
 
 <h3><%= @mover.user_name %></h3>
+
+<h1><%= link_to 'Jobs in your area', movers_jobs_area_path %></h1>
+
+<%= image_tag @mover.avatar.url(:medium) %>

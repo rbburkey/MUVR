@@ -6,14 +6,15 @@ class MoversController < ApplicationController
   end
 
   def profile
-@mover = current_mover
+    @mover = current_mover
+  end
+
+
+
+  def jobs_area
+    @jobs = Job.where(area: current_mover.service_area)
   end
 end
-
-
-
-
-
 # private
 #   # Use callbacks to share common setup or constraints between actions.
 #   def set_mover
