@@ -6,7 +6,7 @@
     <div style="text-align: center">
       <h2>current movers</h2>
       <% @movers.each do |m| %>
-        <p><%= link_to m.user_name, movers_profile_path(m.user_name), class: 'btn btn-success btn-lg' %></p>
+        <p><%= link_to m.user_name, profile_path(m.user_name), class: 'btn btn-success btn-lg' %></p>
       <% end %>
     </div>
   </div>

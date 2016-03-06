@@ -1,6 +1,7 @@
 @mover = Mover.find_by(user_name: params[:user_name])
 
 
+
 get 'movers/:id' => 'movers#profile'
 
 class MoversController < ApplicationController

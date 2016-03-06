@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   devise_for :movers, :controllers => { registrations: 'registrations' }
   devise_for :users, :controllers => { registrations: "user/registrations" }
 
+  get ':user_name', to: 'profiles#show', as: :profile
 
   get 'users/' => 'users#index'
 
