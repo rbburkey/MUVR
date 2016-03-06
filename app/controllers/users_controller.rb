@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def portal
     @user = current_user
+    @movers = Mover.all
   end
 
   def profile

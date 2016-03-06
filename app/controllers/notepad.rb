@@ -1,25 +1,38 @@
-class RegistrationsController < Devise::RegistrationsController
+@mover = Mover.find_by(user_name: params[:user_name])
 
+
+get 'movers/:id' => 'movers#profile'
+
+class MoversController < ApplicationController
+  def portal
+    @mover = current_mover
+  end
+
+  def profile
+    @movers = Mover.all
+    @mover = current_mover
+  end
+
+end
+
+class MoversController < ApplicationController
+  def portal
+    @mover = current_mover
+  end
+
+  def profile
+    @mover = Mover.find(params[:id])
+  end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_mover
+      @mover = Mover.find(params[:id])
+    end
 
-  def sign_up_params
-    params.require(:user).permit(:email, :username, :first_name, :last_name, :avatar, :password, :password_confirmation)
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def mover_params
+      params.require(:mover).permit(:first_name, :last_name, :user_name, :email, :truck_available, :license, :service_area)
+    end
 
-  def account_update_params
-    params.require(:user).permit(:username, :first_name, :last_name, :email, :avatar, :password, :password_confirmation, :current_password)
-  end
 end
-
-def create
-  @mover = Mover.new(user_params)
-end
-
-<h2><%= "#{@mover.first_name}'s" + " Profile"  %></h2>
-
-
-<% @movers.each do |mover| %>
-<p>Your Username is:</p>
-<h3><%= mover.user_name %></h3>
-<% end %>
