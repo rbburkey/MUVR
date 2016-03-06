@@ -1,2 +1,7 @@
-<h1>Movers#profile</h1>
-<p>Find me in app/views/movers/profile.html.erb</p>
+<h1><%= "#{@mover.email}'s" + " Profile" %></h1>
+
+
+<div class="container">
+  <h2><%= "#{@mover.first_name}" + " #{@mover.last_name}" %></h2>
+  <h2><%= "Available in" + " #{@mover.service_area}" %></h2>
+</div>

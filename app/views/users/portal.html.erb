@@ -1,1 +1,13 @@
-<h1>Users Portal</h1>
+<div class="jumbotron">
+  <div class="profile container">
+    <h1><%= "#{@user.username}'s" + " Portal"  %></h1>
+    <p>This is a template for a simple marketing or informational website. </p>
+    <div style="text-align: center"><%= link_to "Create Job", new_job_path, class: 'btn btn-primary btn-lg'%></div>
+    <div style="text-align: center">
+      <h2>current movers</h2>
+      <% @movers.each do |m| %>
+        <p><%= link_to "#{m.email}" , :controller => "/movers", :action => "profile", :id => m.id, class: 'btn btn-success btn-lg' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

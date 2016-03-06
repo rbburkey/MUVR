@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 
 
 
-  get 'users/' => 'users#index'
+
   resources :jobs
+
   devise_for :movers
+      get 'movers/:id' => 'movers#profile', :as => "mover_prof"
   devise_for :users
-    get 'users/:id' => 'users#profile', :as => "user_prof"
+    get '/users/:id' => 'users#profile', :as => "user_prof"
+
 
 
 
