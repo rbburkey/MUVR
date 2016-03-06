@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305231732) do
+ActiveRecord::Schema.define(version: 20160306225610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,19 @@ ActiveRecord::Schema.define(version: 20160305231732) do
   add_index "movers", ["email"], name: "index_movers_on_email", unique: true, using: :btree
   add_index "movers", ["reset_password_token"], name: "index_movers_on_reset_password_token", unique: true, using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "mover_id"
+    t.integer  "user_id"
+    t.boolean  "userz",      default: false
+  end
+
+  add_index "reviews", ["mover_id"], name: "index_reviews_on_mover_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -85,4 +98,6 @@ ActiveRecord::Schema.define(version: 20160305231732) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "jobs", "users"
+  add_foreign_key "reviews", "movers"
+  add_foreign_key "reviews", "users"
 end
