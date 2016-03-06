@@ -11,7 +11,7 @@
         <%if user_signed_in?%>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Portal", users_portal_path %></li>
-        <li><%= link_to "Profile", users_profile_path %></li>
+        <li><%= link_to "Profile", user_prof_path(current_user) %></li>
         <li><%= link_to "Find a Mover"  %></li>
         <li><%= link_to "Log Out User", destroy_user_session_path, method: :delete%></li>
         <li><%= link_to "Sign Up Movr", new_mover_registration_path  %></li>

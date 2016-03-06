@@ -11,12 +11,16 @@ Rails.application.routes.draw do
 
   get 'users/portal'
 
-  get 'users/profile'
+
 
   get 'users/' => 'users#index'
   resources :jobs
   devise_for :movers
   devise_for :users
+    get 'users/:id' => 'users#profile', :as => "user_prof"
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

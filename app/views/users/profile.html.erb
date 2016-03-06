@@ -1,2 +1,9 @@
 <h1>Users#profile</h1>
 <p>Find me in app/views/users/profile.html.erb</p>
+
+<!-- This will list out jobs -->
+<%@user.jobs.each do |jobz|%>
+<%=jobz.name%>
+<%=jobz.description%>
+<%=jobz.area%><br />
+<%end%>
