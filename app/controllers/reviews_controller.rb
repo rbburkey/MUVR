@@ -8,10 +8,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
-# if the review is about a user then return true
 
-
-  # GET /reviews/1
   # GET /reviews/1.json
   def show
   end

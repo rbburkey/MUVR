@@ -7,20 +7,16 @@ Rails.application.routes.draw do
   get 'static/contact'
 
 
-
   get 'movers/jobs_area'
-
-
-
 
   resources :jobs
 
-  devise_for :movers
+  devise_for :movers, :controllers => { registrations: 'registrations' }
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
   get 'movers/:id' => 'movers#profile', :as  => "mover_prof"
 
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: "user/registrations" }
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
 

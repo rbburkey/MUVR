@@ -1,23 +1,28 @@
 
-<h1>Movers Portal</h1>
+<div class="jumbotron">
+  <div class="profile container">
+    <%= image_tag @mover.avatar.url(:medium) %>
+    <h1><%= "#{@mover.first_name}'s" + " Portal" %></h1>
+    <p>This is a template for a simple marketing or informational website. </p>
+    <h2>Jobs in Your Area</h2>
+    <p>This is a template for a simple marketing or informational website. </p>
+    <div style="text-align: center">
+      <% @jobs.each do |job| %>
+        <p><%= link_to job.name,  jobs_path(@job), class: 'btn btn-success btn-lg' %></p>
+      <% end %>
+    </div>
+    <div style="text-align: center">
+      <h2>Your Reviews</h2>
 
-<h2><%= "#{@mover.first_name}'s" + " Portal"  %></h2>
-
-<h3><%= @mover.user_name %></h3>
-s
-
-REVIEWZ I HAVE POSTED ABOUT UZERZ
-<%@reviews.each do |mover_review|%>
-<!-- want userz=true because we want reviews about users  -->
-<%if mover_review.mover_id == @mover.id && mover_review.userz?%>
-<%= mover_review.title%>
-<%= mover_review.body%>
-<%= mover_review.mover_id%>
-<%= mover_review.userz%>
-<%end%>
-<%end%>
-
-<h1><%= link_to 'Jobs in your area', movers_jobs_area_path %></h1>
-
-<%= image_tag @mover.avatar.url(:medium) %>s
-sss
+      <%@reviews.each do |mover_review|%>
+      <!-- want userz=true because we want reviews about users  -->
+      <%if mover_review.mover_id == @mover.id && mover_review.userz?%>
+      <%= mover_review.title%>
+      <%= mover_review.body%>
+      <%= mover_review.mover_id%>
+      <%= mover_review.userz%>
+      <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>

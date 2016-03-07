@@ -5,6 +5,7 @@ before_action :set_user, only: [:profile]
     @user= current_user
     @reviews=Review.all
     @movers=Mover.all
+    @jobs=Job.all
   end
 
 # SHOW
@@ -31,7 +32,6 @@ before_action :set_user, only: [:profile]
   def movers_area
     @movers = Mover.where(service_area: current_user.user_area)
   end
-
 
 
   # Use strong_parameters for attribute whitelisting
