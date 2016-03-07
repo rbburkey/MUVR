@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
 
-  belongs_to :users
-  belongs_to :movers
+  belongs_to :user
+  belongs_to :mover
   has_many :jobapps
 
   has_attached_file :image, styles: { large: "600x600>", medium: "#300x300>", thumb: "150x150#"}

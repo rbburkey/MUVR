@@ -5,7 +5,7 @@ class Mover < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs, through: :jobapps
-  belongs_to :users
+  belongs_to :user
   has_many :reviews
   has_many :jobapps
 
