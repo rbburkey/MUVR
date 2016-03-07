@@ -1,10 +1,20 @@
 class JobappsController < ApplicationController
   before_action :set_jobapp, only: [:show, :edit, :update, :destroy]
+  before_filter :mover_only, only: [:create, :edit, :update, :destroy, :new]
+
 
   # GET /jobapps
   # GET /jobapps.json
   def index
     @jobapps = Jobapp.all
+  end
+
+  def mover_only
+    unless mover_signed_in?
+       flash[:notice] = "Access Denied."
+      #  where do we want to redirects
+       redirect_to :jobs_area
+    end
   end
 
   # GET /jobapps/1
@@ -25,7 +35,9 @@ class JobappsController < ApplicationController
   # POST /jobapps.json
   def create
     @jobapp = Jobapp.new(jobapp_params)
-
+    if mover_signed_in?
+      @jobapp.mover_id = current_mover
+    end
     respond_to do |format|
       if @jobapp.save
         format.html { redirect_to @jobapp, notice: 'Jobapp was successfully created.' }
