@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_filter :client_only, only:[:new, :create, :update, :destroy, :edit]
+  before_action :authenticate_user! || :authenticate_mover!, only: [:show, :index]
 
 
 
@@ -10,9 +11,13 @@ class JobsController < ApplicationController
     @jobs = Job.all
   end
 
+def show
+end
+
   def client_only
     unless user_signed_in?
-      redirect_to :jobs, :alert => "Access denied."
+       flash[:notice] = "Access denied."
+       redirect_to :jobs
     end
   end
 

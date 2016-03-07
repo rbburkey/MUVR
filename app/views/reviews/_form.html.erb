@@ -1,0 +1,38 @@
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <%if mover_signed_in?%>
+  <div class="field">
+    <%= f.label :user_id%><br>
+    <%= f.text_field :user_id %>
+    </div>
+
+    <%else%>
+
+    <div class="field">
+      <%= f.label :mover_id%><br>
+      <%= f.text_field :mover_id %>
+  </div>
+<%end%>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

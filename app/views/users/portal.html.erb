@@ -1,14 +1,29 @@
 <div class="jumbotron">
   <div class="profile container">
-    <h1><%= "#{@user.username}'s" + " Portal"  %></h1>
+    <!-- using email for now, change later -->
+    <h1><%= "#{@user.email}'s" + " Portal"  %></h1>
     <p>This is a template for a simple marketing or informational website. </p>
     <div style="text-align: center"><%= link_to "Create Job", new_job_path, class: 'btn btn-primary btn-lg'%></div>
     <div style="text-align: center">
       <h2>current movers</h2>
       <% @movers.each do |m| %>
-        <p><%= link_to m.user_name, profile_path(m.user_name), class: 'btn btn-success btn-lg' %></p>
+      <!-- m.email is a place holer for link -->
+        <p><%= link_to "#{m.email}" , :controller => "/movers", :action => "profile", :id => m.id, class: 'btn btn-success btn-lg' %></p>
       <% end %>
     </div>
   </div>
 </div>
+
+
+REVIEWZ I HAVE POSTED
+<%@reviews.each do |user_review|%>
+<!-- want userz=false because we want reviews about movers posted by this user -->
+<%if user_review.user_id == current_user.id && !user_review.userz?%>
+<%= user_review.title%>
+<%= user_review.body%>
+<%= user_review.user_id%>
+<%= user_review.userz%>
+<%end%>
+<%end%>
+
 <%= image_tag @user.avatar.url(:medium) %>
