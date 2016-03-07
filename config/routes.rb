@@ -1,32 +1,32 @@
 Rails.application.routes.draw do
+  root 'static#welcome'
+
   get 'static/welcome'
-
   get 'static/about'
-
   get 'static/contact'
 
   get 'movers/portal'
-
   get 'movers/profile'
 
-  get 'users/portal'
+  get 'movers/jobs_area'
 
+
+  get 'users/portal'
   get 'users/profile'
+  get 'users/user_jobs'
+  get 'users/' => 'users#index'
+  get 'user_name', to: 'profiles#show', as: :profile
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
   devise_for :users, :controllers => { registrations: "user/registrations" }
-
-  get ':user_name', to: 'profiles#show', as: :profile
-
-  get 'users/' => 'users#index'
-
   resources :jobs
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static#welcome'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

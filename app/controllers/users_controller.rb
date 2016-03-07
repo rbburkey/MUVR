@@ -8,16 +8,21 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-
-
   def create
     @user = User.new(user_params)
   end
 
-  private
+  def user_jobs
+    @jobs = Job.where(user_id: current_user.id)
+  end
+
+  def movers_area
+    @movers = Mover.where()
+
 
   # Use strong_parameters for attribute whitelisting
   # Be sure to update your create() and update() controller methods.
+private
 
   def user_params
     params.require(:user).permit(:avatar)
