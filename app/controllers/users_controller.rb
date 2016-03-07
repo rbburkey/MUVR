@@ -4,8 +4,9 @@ before_action :set_user, only: [:profile]
   def portal
 
     @user= current_user
-    @movers = Mover.all
     @reviews=Review.all
+    @movers=Mover.all
+    @jobs=Job.all
 
   end
 
@@ -31,8 +32,10 @@ before_action :set_user, only: [:profile]
   end
 
   def movers_area
-    @movers = Mover.where(:service_area current_user.user_area)
-end
+
+    @movers = Mover.where(service_area: current_user.user_area)
+  end
+
 
 
   # Use strong_parameters for attribute whitelisting

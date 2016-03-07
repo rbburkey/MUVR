@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_filter :client_only, only:[:new, :create, :update, :destroy, :edit]
-  before_action :authenticate_user! || :authenticate_mover!, only: [:show, :index]
 
 
 
