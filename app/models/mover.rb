@@ -5,7 +5,7 @@ class Mover < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs
-  belongs_to :users
+  belongs_to :user
   has_many :reviews
 
   has_attached_file :avatar, styles: {:medium => "300x300>", :thumb => "100x100>" }
