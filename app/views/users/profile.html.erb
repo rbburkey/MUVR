@@ -1,13 +1,8 @@
 <div class="jumbotron">
   <div class="profile container">
 
-    <h1><%= "#{@user.email}'s" + " Profile"  %></h1>
+    <h1><%= "#{@user.first_name}'s" + " Profile" %></h1>
 
-    <div align="center">
-      <p>
-        <!-- this wont work if a mover is signed in -->
-
-      </p><br> -->
       <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-primary btn-lg'%></div>
     </div>
   </div>

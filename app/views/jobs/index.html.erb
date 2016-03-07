@@ -1,15 +1,13 @@
 <div class="container">
   <h1>All Jobs</h1>
-<div class="row">
   <% @jobs.each do |job| %>
-    <div class="col-md-4 post">
-        <div class="user-name">
-        <p><%= link_to job.name, job_path(job)%></p>
-        </div>
-      </div>
-      <div class="image center-block">
-        <%= image_tag job.image.url(:medium) %>
-      </div>
+  <div class="col-md-4">
+    <div class="column">
+      <h2><%= "Title: " + "#{job.name}"%></h2>
+      <h3><%= "Located in: " + "#{job.area}"%></h3>
+      <div class="image"><%= image_tag job.image.url(:medium) %></div>
+      <%= link_to "See Details", job_path(job), class: "btn btn-primary"%>
+    </div>
     <% end %>
   </div>
 </div>

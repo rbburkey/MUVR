@@ -67,6 +67,20 @@ p {
   line-height: normal;
 }
 
+.column {
+  float: left;
+  width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+}
+
+.image {
+  padding: 20px;
+}
+
 .orange_button a {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-color: #fc9f00;
