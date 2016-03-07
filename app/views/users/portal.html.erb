@@ -14,6 +14,7 @@
   </div>
 </div>
 
+
 REVIEWZ I HAVE POSTED
 <%@reviews.each do |user_review|%>
 <!-- want userz=false because we want reviews about movers posted by this user -->
@@ -24,3 +25,5 @@ REVIEWZ I HAVE POSTED
 <%= user_review.userz%>
 <%end%>
 <%end%>
+
+<%= image_tag @user.avatar.url(:medium) %>

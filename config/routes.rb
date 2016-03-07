@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
+
   resources :reviews
+  root 'static#welcome'
   get 'static/welcome'
-
   get 'static/about'
-
   get 'static/contact'
 
   get 'movers/portal'
-
   get 'movers/profile'
 
-  get 'users/portal'
+  get 'movers/jobs_area'
 
 
 
@@ -25,11 +24,12 @@ Rails.application.routes.draw do
 
 
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static#welcome'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
