@@ -34,6 +34,14 @@ a:visited {
   font-size: 45px;
 }
 
+h1 a {
+ font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ text-align: center;
+ color: #000;
+ font-weight: 500;
+ font-size: 45px;
+}
+
 h2 {
  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
  text-align: center;

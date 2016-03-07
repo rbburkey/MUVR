@@ -15,6 +15,7 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
+        <td><%= image_tag job.image.url(:thumb) %></td>
         <td><%= job.name %></td>
         <td><%= job.description %></td>
         <td><%= job.area %></td>
