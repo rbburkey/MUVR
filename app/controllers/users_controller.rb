@@ -11,7 +11,7 @@ before_action :set_user, only: [:profile]
 
 # SHOW
   def profile
-        @reviews=Review.all
+  @reviews=Review.all
   end
 
   def index
