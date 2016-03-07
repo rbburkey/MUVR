@@ -33,7 +33,6 @@ before_action :set_user, only: [:profile]
   end
 
 
-
   # Use strong_parameters for attribute whitelisting
   def set_user
     @user = User.find(params[:id])

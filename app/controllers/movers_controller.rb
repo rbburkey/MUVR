@@ -23,8 +23,9 @@ protected
     @mover = Mover.find(params[:id])
   end
 
-
-
+  def profile
+    @mover = current_mover
+  end
 end
 # private
 #   # Use callbacks to share common setup or constraints between actions.

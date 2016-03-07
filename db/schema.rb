@@ -16,17 +16,6 @@ ActiveRecord::Schema.define(version: 20160307172439) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "jobapps", force: :cascade do |t|
-    t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "mover_id"
-    t.integer  "job_id"
-  end
-
-  add_index "jobapps", ["job_id"], name: "index_jobapps_on_job_id", using: :btree
-  add_index "jobapps", ["mover_id"], name: "index_jobapps_on_mover_id", using: :btree
-
   create_table "jobs", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -109,8 +98,6 @@ ActiveRecord::Schema.define(version: 20160307172439) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "jobapps", "jobs"
-  add_foreign_key "jobapps", "movers"
   add_foreign_key "jobs", "users"
   add_foreign_key "reviews", "movers"
   add_foreign_key "reviews", "users"
