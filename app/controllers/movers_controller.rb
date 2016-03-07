@@ -1,5 +1,5 @@
 class MoversController < ApplicationController
-before_action :set_mover, only: [:profile, :portal]
+before_action :set_mover, only: [:profile]
 
   def portal
     @users = User.all

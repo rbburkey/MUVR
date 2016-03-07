@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :about_user, only: [:create]
+
 
   # GET /reviews
   # GET /reviews.json
@@ -9,11 +9,7 @@ class ReviewsController < ApplicationController
   end
 
 # if the review is about a user then return true
-  def about_user
-    if mover_signed_in?
-      userz = true
-    end
-  end
+
 
   # GET /reviews/1
   # GET /reviews/1.json
@@ -37,6 +33,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
   else
     @review.mover_id = current_mover.id
+    @review.userz = true
   end
 
 
@@ -83,6 +80,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :body, :userz)
+      params.require(:review).permit(:title, :body)
     end
 end
