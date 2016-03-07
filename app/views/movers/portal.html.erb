@@ -3,3 +3,15 @@
 <h2><%= "#{@mover.first_name}'s" + " Portal"  %></h2>
 
 <h3><%= @mover.user_name %></h3>
+
+
+REVIEWZ I HAVE POSTED ABOUT UZERZ
+<%@reviews.each do |mover_review|%>
+<!-- want userz=true because we want reviews about users  -->
+<%if mover_review.mover_id == @mover.id && mover_review.userz?%>
+<%= mover_review.title%>
+<%= mover_review.body%>
+<%= mover_review.mover_id%>
+<%= mover_review.userz%>
+<%end%>
+<%end%>

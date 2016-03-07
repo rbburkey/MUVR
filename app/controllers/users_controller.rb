@@ -4,12 +4,14 @@ before_action :set_user, only: [:profile]
   def portal
     @user= current_user
     @movers = Mover.all
+    @reviews=Review.all
 
 
   end
 
 # SHOW
   def profile
+        @reviews=Review.all
   end
 
   def index

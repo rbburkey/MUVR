@@ -2,6 +2,17 @@
 
 
 <div class="container">
-  <h2><%= "#{@mover.first_name}" + " #{@mover.last_name}" %></h2>
+  <h2><%= "#{@mover.first_name}" + " #{@mover.last_name}" + " #{@mover.id}" %></h2>
   <h2><%= "Available in" + " #{@mover.service_area}" %></h2>
 </div>
+
+
+REVIEWZ
+<%@reviews.each do |mover_review|%>
+<!-- want userz=false because we want reviews about movers -->
+<%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
+<%= mover_review.body%>
+<%= mover_review.mover_id%>
+<%= mover_review.userz%>
+<%end%>
+<%end%>

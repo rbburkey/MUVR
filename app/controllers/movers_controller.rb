@@ -4,9 +4,11 @@ before_action :set_mover, only: [:profile]
   def portal
     @users = User.all
     @mover = current_mover
+    @reviews=Review.all
   end
 
   def profile
+    @reviews=Review.all
   end
 
 

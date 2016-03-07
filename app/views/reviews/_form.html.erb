@@ -15,6 +15,19 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+  <%if mover_signed_in?%>
+  <div class="field">
+    <%= f.label :user_id%><br>
+    <%= f.text_field :user_id %>
+    </div>
+
+    <%else%>
+
+    <div class="field">
+      <%= f.label :mover_id%><br>
+      <%= f.text_field :mover_id %>
+  </div>
+<%end%>
   <div class="field">
     <%= f.label :body %><br>
     <%= f.text_field :body %>
