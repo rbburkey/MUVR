@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def portal
     @user = current_user
-    @movers = Mover.all
+    # @movers = Mover.all
   end
 
   def profile
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def movers_area
-    @movers = Mover.where()
-
+    @movers = Mover.where(:service_area current_user.user_area)
+end
 
   # Use strong_parameters for attribute whitelisting
   # Be sure to update your create() and update() controller methods.

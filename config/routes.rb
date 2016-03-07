@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'static/contact'
 
   get 'movers/portal'
+  get 'users/movers_area'
   get 'movers/profile'
 
   get 'movers/jobs_area'
