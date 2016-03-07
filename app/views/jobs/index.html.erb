@@ -1,31 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Area</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.name %></td>
-        <td><%= job.description %></td>
-        <td><%= job.area %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container">
+  <h1>All Jobs</h1>
+  <% @jobs.each do |job| %>
+  <div class="col-md-4">
+    <div class="column">
+      <h2><%= "Title: " + "#{job.name}"%></h2>
+      <h3><%= "Located in: " + "#{job.area}"%></h3>
+      <div class="image"><%= image_tag job.image.url(:medium) %></div>
+      <%= link_to "See Details", job_path(job), class: "btn btn-primary"%>
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>
+  </div>
+</div>

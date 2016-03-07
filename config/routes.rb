@@ -1,27 +1,26 @@
 Rails.application.routes.draw do
   resources :jobapps
   resources :reviews
+  root 'static#welcome'
   get 'static/welcome'
-
   get 'static/about'
-
   get 'static/contact'
 
-  get 'movers/portal'
 
-  get 'movers/profile'
-
-  get 'users/portal'
-
-
-
+  get 'movers/jobs_area'
 
   resources :jobs
 
-  devise_for :movers
-      get 'movers/:id' => 'movers#profile', :as => "mover_prof"
-  devise_for :users
-    get '/users/:id' => 'users#profile', :as => "user_prof"
+  devise_for :movers, :controllers => { registrations: 'registrations' }
+  get 'movers/portal' => 'movers#portal', :as => "movers_portal"
+  get 'movers/:id' => 'movers#profile', :as  => "mover_prof"
+
+
+  devise_for :users, :controllers => { registrations: "user/registrations" }
+  get '/users/portal' => 'users#portal', :as => "users_portal"
+  get '/users/:id' => 'users#profile', :as  => "user_prof"
+
+
 
 
 
@@ -30,7 +29,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static#welcome'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

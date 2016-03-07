@@ -1,13 +1,8 @@
 <div class="jumbotron">
   <div class="profile container">
 
-    <h1><%= "#{@user.email}'s" + " Profile"  %></h1>
+    <h1><%= "#{@user.first_name}'s" + " Profile" %></h1>
 
-    <div align="center">
-      <p>
-        <!-- this wont work if a mover is signed in -->
-
-      </p><br> -->
       <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-primary btn-lg'%></div>
     </div>
   </div>
@@ -34,7 +29,8 @@
   <%end%>
 
 </table>
-
+<div style="text-align: center">
+  <h2>Your Reviews</h2>
 <%@reviews.each do |user_review|%>
 <!-- want userz=true because we want reviews about user  -->
 <%if user_review.user_id == @user.id && user_review.userz?%>
@@ -44,3 +40,4 @@
 <%= user_review.userz%>
 <%end%>
 <%end%>
+</div>
