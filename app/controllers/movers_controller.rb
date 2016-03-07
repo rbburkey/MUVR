@@ -3,16 +3,11 @@ class MoversController < ApplicationController
   def portal
     @users = User.all
     @mover = current_mover
+    @jobs = Job.where(area: current_mover.service_area)
   end
 
   def profile
     @mover = current_mover
-  end
-
-
-
-  def jobs_area
-    @jobs = Job.where(area: current_mover.service_area)
   end
 end
 # private

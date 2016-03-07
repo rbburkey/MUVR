@@ -1,10 +1,17 @@
-
-<h1>Movers Portal</h1>
-
-<h2><%= "#{@mover.first_name}'s" + " Portal"  %></h2>
-
-<h3><%= @mover.user_name %></h3>
-
-<h1><%= link_to 'Jobs in your area', movers_jobs_area_path %></h1>
-
-<%= image_tag @mover.avatar.url(:medium) %>
+<div class="jumbotron">
+  <div class="profile container">
+    <%= image_tag @mover.avatar.url(:medium) %>
+    <h1><%= "#{@mover.first_name}'s" + " Portal" %></h1>
+    <p>This is a template for a simple marketing or informational website. </p>
+    <div style="text-align: center">
+      <p><%= link_to 'Jobs in your area', movers_jobs_area_path, class: 'btn btn-warning btn-lg' %></p>
+    </div>
+    <h2>Jobs in Your Area</h2>
+    <p>This is a template for a simple marketing or informational website. </p>
+    <div style="text-align: center">
+      <% @jobs.each do |job| %>
+        <p><%= link_to job.name,  jobs_path(@job), class: 'btn btn-success btn-lg' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
