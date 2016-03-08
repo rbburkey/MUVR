@@ -21,6 +21,10 @@ nav a:visited {
   color: #FFF !important;
 }
 
+.navbar-static-top .container-fluid {
+  padding: 0 5%;
+}
+
 
 body {
   height: 100%
@@ -55,7 +59,7 @@ h3 {
   text-align: center;
   color: #000;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h4 {
@@ -73,6 +77,22 @@ p {
   font-weight: 500;
   font-size: 12px;
   line-height: normal;
+}
+
+.profile h1 {
+  margin-bottom: 80px;
+}
+
+.btn-sq-lg {
+  margin-top: 100px;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+
+.signin {
+  color: #fff;
+  text-decoration: none;
 }
 
 
@@ -95,6 +115,20 @@ p {
   padding: 10px;
 }
 
+.avatar {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.avatar img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
 .orange_button a {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-color: #fc9f00;
@@ -109,7 +143,7 @@ p {
 }
 
 .profile {
-  height: 500px;
+  height: auto;
 }
 
 
