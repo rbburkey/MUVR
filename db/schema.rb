@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160307211237) do
+=======
+ActiveRecord::Schema.define(version: 20160308165451) do
+>>>>>>> 1409d8242e8226fc69e912432235231021378a72
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160307211237) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.text     "bio"
   end
 
   add_index "movers", ["email"], name: "index_movers_on_email", unique: true, using: :btree
