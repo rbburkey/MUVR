@@ -29,9 +29,7 @@ class JobappsController < ApplicationController
 
   # GET /jobapps/new
   def new
-
-@jobapp=@job.jobapps.build
-
+@jobapp = @job.jobapps.build
   end
 
 

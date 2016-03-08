@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'static/contact'
 
 
+  get 'users/user_apps'
   get 'movers/jobs_area'
   resources :jobs do
       resources :jobapps, shallow: true
