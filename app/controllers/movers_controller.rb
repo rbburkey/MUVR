@@ -14,9 +14,13 @@ before_action :set_mover, only: [:profile]
     @reviews=Review.all
   end
 
-    def jobs_area
-      @jobs = Job.where(area: current_mover.service_area)
-    end
+  def jobs_area
+    @jobs = Job.where(area: current_mover.service_area)
+  end
+
+  def mover_apps
+    @jobapp = Jobapp.where(mover_id: current_mover.id)
+  end
 
 protected
   def set_mover

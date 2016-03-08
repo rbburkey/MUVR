@@ -23,6 +23,8 @@ before_action :set_user, only: [:profile]
     @user = User.new(user_params)
   end
 
+  def current_jobapps
+  end
 
   private
     def user_jobs

@@ -25,6 +25,11 @@ end
   def show
   end
 
+
+  def user_apps
+    @jobapp = Jobapp.where(user_id: current_user.id)
+  end
+
   # GET /jobs/new
   def new
     @job = Job.new
