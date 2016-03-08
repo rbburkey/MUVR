@@ -1,4 +1,4 @@
 class Review < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :movers
+  belongs_to :user
+  belongs_to :mover
 end
