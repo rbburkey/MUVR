@@ -25,6 +25,11 @@ end
   def show
   end
 
+
+  def user_apps
+    @jobapp = Jobapp.where(user_id: current_user.id)
+  end
+
   # GET /jobs/new
   def new
     @job = Job.new
@@ -39,7 +44,9 @@ end
   def create
     @job = Job.new(job_params)
     # to index the user_id column in jobs table
-    @job.user_id = current_user.id
+    if user_signed_in?
+      @job.user_id = current_user.id
+    end
 
     respond_to do |format|
       if @job.save
