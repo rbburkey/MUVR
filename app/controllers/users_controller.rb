@@ -6,6 +6,7 @@ before_action :set_user, only: [:profile]
     @reviews=Review.all
     @movers=Mover.all
     @jobs=Job.all
+    @jobapps = Jobapp.all
   end
 
 # SHOW

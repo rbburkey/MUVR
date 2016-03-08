@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
 
   get 'movers/jobs_area'
-
   resources :jobs do
       resources :jobapps, shallow: true
   end
