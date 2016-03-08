@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'static/about'
   get 'static/contact'
 
-
+  get 'users/user_apps'
   get 'movers/jobs_area'
 
   resources :jobs do
