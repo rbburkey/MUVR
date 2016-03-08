@@ -16,7 +16,16 @@ class JobsController < ApplicationController
   end
 
 def show
+  # Gmaps.store.markers.filter(function(m) { return m.serviceObject.id == id; })[0]
+  @job = Job.find(params[:id])
+
+  @hash = Gmaps4rails.build_markers([@job]) do |job, marker|
+marker.lat job.latitude
+marker.lng job.longitude
+marker.infowindow job.name
 end
+end
+
 
   def client_only
     unless user_signed_in?
@@ -24,12 +33,9 @@ end
        redirect_to :jobs
     end
   end
-
+  
   # GET /jobs/1
   # GET /jobs/1.json
-  def show
-  end
-
   # GET /jobs/new
   def new
     @job = Job.new
