@@ -1,50 +1,51 @@
+
 <div class="jumbotron">
-  <div class="profile container">
-    <h1 class="headline"><%= "#{@mover.first_name}" + " #{@mover.last_name}'s" + " Profile"%></h1>
+ <div class="profile container">
+   <h1 class="headline"><%= "#{@mover.first_name}" + " #{@mover.last_name}'s" + " Profile"%></h1>
 
-    <div class="col-md-4 text-center">
-      <div class="avatar"><%= image_tag @mover.avatar.url(:medium) %></div>
-    </div>
+   <div class="col-md-4 text-center">
+     <div class="avatar"><%= image_tag @mover.avatar.url(:medium) %></div>
+   </div>
 
 
-    <div class="col-md-4 text-center">
-      <h2><%= "About: " + "#{@mover.first_name}"%></h2>
-      <h3><%="username: " + "#{@mover.user_name}"%></h3>
-      <h3><%= "Is available in" + " #{@mover.service_area}" %></h3>
+   <div class="col-md-4 text-center">
+     <h2><%= "About: " + "#{@mover.first_name}"%></h2>
+     <h3><%="username: " + "#{@mover.user_name}"%></h3>
+     <h3><%= "Is available in" + " #{@mover.service_area}" %></h3>
 
-      <% if @mover.truck_available == true %>
-      <h3>I have a truck!<h3>
-        <% else %>
-        <h3>I don't have a truck<h3>
-      <%end%>
+     <% if @mover.truck_available == true %>
+     <h3>I have a truck!<h3>
+       <% else %>
+       <h3>I don't have a truck<h3>
+     <%end%>
 
-      <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
+     <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
 
-          <p><%= @mover.bio %></p>
+         <p><%= @mover.bio %></p>
 
-          <div><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
-          </div>
-        </div>
+         <div><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
+         </div>
+       </div>
 
-        <div class="col-md-4 text-center">
-          <div style="text-center">
-            <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
+       <div class="col-md-4 text-center">
+         <div style="text-center">
+           <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
+           <p>Some review here about teresa</p>
+           <p>Some review here about teresa</p>
+           <p>Some review here about teresa</p>
+           <p>Some review here about teresa</p>
+           <p>Some review here about teresa</p>
 
-            <%@reviews.each do |mover_review|%>
-            <!-- want userz=false because we want reviews about movers -->
-            <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
-            <%= mover_review.body%>
-            <%= mover_review.mover_id%>
-            <%= mover_review.userz%>
-            <%end%>
-            <%end%>
-          </div>
-        </div>
+           <%@reviews.each do |mover_review|%>
+           <!-- want userz=false because we want reviews about movers -->
+           <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
+           <%= mover_review.body%>
+           <%= mover_review.mover_id%>
+           <%= mover_review.userz%>
+           <%end%>
+           <%end%>
+         </div>
+       </div>
 
-      </div>
-    </div>
+     </div>
+   </div>
