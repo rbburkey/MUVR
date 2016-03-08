@@ -9,13 +9,7 @@ Rails.application.routes.draw do
   get 'movers/jobs_area'
 
   resources :jobs do
-
       resources :jobapps, shallow: true
-      get 'jobs/:job_id/jobapps/new' => 'jobapps#new'
-          post 'jobs/:job_id/jobapps/' => 'jobapps#create'
-      get '/jobs/:job_id/jobapps/:id/edit' => 'jobapps#edit'
-      get '/jobs/:job_id/jobapps/:id' => 'jobapps#show'
-
   end
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
@@ -26,10 +20,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: "user/registrations" }
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
-
-
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

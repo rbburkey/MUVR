@@ -44,8 +44,7 @@ class JobappsController < ApplicationController
   def create
 
     @jobapp = @job.jobapps.build(jobapp_params)
-
-@jobapp.user_id= @job.user_id
+ @jobapp.user_id = @job.user_id
         if mover_signed_in?
           @jobapp.mover_id = current_mover.id
 
@@ -55,10 +54,9 @@ class JobappsController < ApplicationController
 
 
 
-
     respond_to do |format|
       if @jobapp.save
-        format.html { redirect_to @jobapp, notice: 'Jobapp was successfully created.' }
+        format.html { redirect_to @jobapp , notice: 'Jobapp was successfully created.' }
         format.json { render :show, status: :created, location: @jobapp }
       else
         format.html { render :new }
@@ -98,11 +96,10 @@ class JobappsController < ApplicationController
     end
 
     def job_load
-@job = Job.find(params[:job_id])
+      @job = Job.find(params[:job_id])
 end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
       params.require(:jobapp).permit(:message)
     end
-
 end
