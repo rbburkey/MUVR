@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <div class="profile container">
+    <h1>All Movers</h1>
+    <div style="text-align: center">
+      <% @movers.each do |mover| %>
+        <p><%= link_to mover.user_name, mover_prof_path(mover), class: 'btn btn-success btn-lg' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
