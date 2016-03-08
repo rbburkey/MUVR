@@ -15,9 +15,13 @@ class JobsController < ApplicationController
    end
   end
 
+def show
+end
+
   def client_only
     unless user_signed_in?
-      redirect_to :jobs, :alert => "Access denied."
+       flash[:notice] = "Access denied."
+       redirect_to :jobs
     end
   end
 

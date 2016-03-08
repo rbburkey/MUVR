@@ -1,2 +1,26 @@
-<h1>Movers#profile</h1>
-<p>Find me in app/views/movers/profile.html.erb</p>
+<div class="jumbotron">
+  <div class="profile container">
+
+    <h1><%= "#{@mover.first_name}'s" + " Profile" %></h1>
+  <h2><%= "#{@mover.first_name}" + " #{@mover.last_name}" + " #{@mover.id}" %></h2>
+  <h2><%= "Available in" + " #{@mover.service_area}" %></h2>
+
+    <div align="center">
+      <P> You are signed in as <%=current_mover.user_name%></p><br>
+        <div style="text-align: center"><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
+        </div>
+        <div style="text-align: center">
+          <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
+
+        <%@reviews.each do |mover_review|%>
+        <!-- want userz=false because we want reviews about movers -->
+        <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
+        <%= mover_review.body%>
+        <%= mover_review.mover_id%>
+        <%= mover_review.userz%>
+        <%end%>
+        <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
