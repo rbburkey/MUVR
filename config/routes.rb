@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :reviews
   root 'static#welcome'
   get 'static/welcome'
@@ -7,9 +6,12 @@ Rails.application.routes.draw do
   get 'static/contact'
 
 
+  get 'users/user_apps'
   get 'movers/jobs_area'
 
-  resources :jobs
+  resources :jobs do
+      resources :jobapps, shallow: true
+  end
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
@@ -21,10 +23,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: "user/registrations" }
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
-
-
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
