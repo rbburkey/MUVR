@@ -21,6 +21,10 @@ nav a:visited {
   color: #FFF !important;
 }
 
+.navbar-static-top .container-fluid {
+  padding: 0 5%;
+}
+
 
 body {
   height: 100%
@@ -73,6 +77,18 @@ p {
   font-weight: 500;
   font-size: 12px;
   line-height: normal;
+}
+
+.btn-sq-lg {
+margin-top: 100px;
+ width: 200px !important;
+  height: 200px !important;
+}
+
+
+.signin {
+  color: #fff;
+  text-decoration: none;
 }
 
 
