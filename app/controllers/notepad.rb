@@ -1,28 +1,55 @@
+<div class="col-md-6 text-center">
+
+  <%= link_to new_user_session_path do %>
+  <div class="btn btn-sq-lg btn-primary">
+    <br>
+    <i class="fa fa-user fa-5x"></i>
+    <br>
+    <p class="signin">User Signin</p>
+  </div>
+<% end %>
+
+</div>
+
+<div class="col-md-6 text-center">
+
+  <%= link_to new_mover_session_path do %>
+  <div class="btn btn-sq-lg btn-success">
+    <br>
+    <i class="fa fa-user fa-5x"></i>
+    <br>
+    <p class="signin">User Signin</p>
+  </div>
+<% end %>
+
 
 <div class="jumbotron">
   <div class="profile container">
-    <%- model_class = Job -%>
-    <div class="page-header">
-      <h1>Listed Jobs</h1>
+
+    <h1><%= "#{@mover.first_name}" + " #{@mover.last_name}'s" + " Profile"%></h1>
+    <h2><%= "Username: " + "#{@mover.user_name}"%></h2>
+    <h2><%= "Available in" + " #{@mover.service_area}" %></h2>
+    <%if current_mover %>
+
+    <div align="center">
+      <br>
+      <div style="text-align: center"><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
+      </div>
+      <% else %>
+
+      <div style="text-align: center">
+        <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
+
+        <%@reviews.each do |mover_review|%>
+        <!-- want userz=false because we want reviews about movers -->
+        <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
+        <%= mover_review.body%>
+        <%= mover_review.mover_id%>
+        <%= mover_review.userz%>
+        <%end%>
+        <%end%>
+      </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th><%= model_class.human_attribute_name(:name) %></th>
-          <th><%= model_class.human_attribute_name(:description) %></th>
-          <th><%= model_class.human_attribute_name(:area) %></th>
-          <th><%=t '.actions', :default => t("helpers.actions") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @jobs.each do |job| %>
-        <tr>
-          <td class="orange_button"><%= link_to job.name, job_path(job)%></td>
-          <td><%= job.description %></td>
-          <td><%= job.area %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
   </div>
+  <% end %>
 </div>

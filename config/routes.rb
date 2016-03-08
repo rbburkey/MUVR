@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   devise_for :movers, :controllers => { registrations: 'registrations' }
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
   get 'movers/:id' => 'movers#profile', :as  => "mover_prof"
+  get 'all_movers' => "movers#all_movers"
+
 
 
   devise_for :users, :controllers => { registrations: "user/registrations" }

@@ -5,29 +5,35 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand">Movr</a>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
+<%= link_to "Movr", root_path , class: 'navbar-brand' %>
+<div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <%if user_signed_in?%>
-        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Portal", users_portal_path %></li>
         <li><%= link_to "Profile", user_prof_path(current_user) %></li>
-        <li><%= link_to "Find a Mover"  %></li>
+        <li><%= link_to "Find a Mover", all_movers_path  %></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Log Out User", destroy_user_session_path, method: :delete%></li>
         <li><%= link_to "Sign Up Movr", new_mover_registration_path  %></li>
+      </ul>
         <%elsif mover_signed_in?%>
-        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Portal", movers_portal_path %></li>
         <li><%= link_to "Profile", mover_prof_path(current_mover) %></li>
         <li><%= link_to "See Jobs", jobs_path %></li>
-        <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
-        <li><%= link_to "Sign Up User", new_user_registration_path  %></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
+          <li><%= link_to "Sign Up User", new_user_registration_path %></li>
+        </ul>
         <% else %>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Signin User", new_user_session_path  %></li>
-        <li><%= link_to "Signin Movr", new_mover_session_path  %></li>
-        <li><%= link_to "Sign Up Movr", new_mover_registration_path  %></li>
-        <li><%= link_to "Sign Up User", new_user_registration_path  %></li>
+        <li><%= link_to "User Signin", new_user_session_path  %></li>
+        <li><%= link_to "Movr Signin", new_mover_session_path  %></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Movr Sign Up", new_mover_registration_path  %></li>
+        <li><%= link_to "User Sign Up", new_user_registration_path  %></li>
+      </ul>
         <% end %>
       </ul>
     </div>
