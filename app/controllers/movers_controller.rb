@@ -14,13 +14,17 @@ before_action :set_mover, only: [:profile]
     @reviews=Review.all
   end
 
-    def jobs_area
-      @jobs = Job.where(area: current_mover.service_area)
-    end
+def all_movers
+  @movers = Mover.all
+end
 
-protected
+private
   def set_mover
     @mover = Mover.find(params[:id])
+  end
+
+  def mover_params
+    params.require(:mover).permit(:avatar)
   end
 
 end

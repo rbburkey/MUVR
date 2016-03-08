@@ -1,13 +1,15 @@
+<div class="jumbotron">
 <div class="container">
   <h1>All Jobs</h1>
   <% @jobs.each do |job| %>
-  <div class="col-md-4">
+  <div class=".col-md-4">
     <div class="column">
-      <h2><%= "Title: " + "#{job.name}"%></h2>
+      <h4><%= "#{job.name}"%></h4>
       <h3><%= "Located in: " + "#{job.area}"%></h3>
       <div class="image"><%= image_tag job.image.url(:medium) %></div>
       <%= link_to "See Details", job_path(job), class: "btn btn-primary"%>
     </div>
     <% end %>
   </div>
+</div>
 </div>
