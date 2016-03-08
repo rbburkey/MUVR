@@ -23,6 +23,10 @@ private
     @mover = Mover.find(params[:id])
   end
 
+  def mover_params
+    params.require(:mover).permit(:avatar)
+  end
+
 end
 # private
 #   # Use callbacks to share common setup or constraints between actions.
