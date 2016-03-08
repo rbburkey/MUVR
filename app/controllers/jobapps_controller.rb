@@ -1,6 +1,8 @@
 class JobappsController < ApplicationController
   before_action :set_jobapp, only: [:show, :edit, :update, :destroy]
   before_filter :mover_only, only: [:create, :edit, :update, :destroy, :new]
+  before_action :job_load, only: [:create, :new]
+
 
 
   # GET /jobapps
@@ -20,12 +22,18 @@ class JobappsController < ApplicationController
   # GET /jobapps/1
   # GET /jobapps/1.json
   def show
+
+
+
   end
 
   # GET /jobapps/new
   def new
-    @jobapp = Jobapp.new
+
+@jobapp=@job.jobapps.build
+
   end
+
 
   # GET /jobapps/1/edit
   def edit
@@ -34,10 +42,20 @@ class JobappsController < ApplicationController
   # POST /jobapps
   # POST /jobapps.json
   def create
-    @jobapp = Jobapp.new(jobapp_params)
-    if mover_signed_in?
-      @jobapp.mover_id = current_mover
-    end
+
+    @jobapp = @job.jobapps.build(jobapp_params)
+
+@jobapp.user_id= @job.user_id
+        if mover_signed_in?
+          @jobapp.mover_id = current_mover.id
+
+        else
+           redirect_to jobs
+        end
+
+
+
+
     respond_to do |format|
       if @jobapp.save
         format.html { redirect_to @jobapp, notice: 'Jobapp was successfully created.' }
@@ -68,7 +86,7 @@ class JobappsController < ApplicationController
   def destroy
     @jobapp.destroy
     respond_to do |format|
-      format.html { redirect_to jobapps_url, notice: 'Jobapp was successfully destroyed.' }
+      format.html { redirect_to job_jobapps_url, notice: 'Jobapp was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -79,8 +97,12 @@ class JobappsController < ApplicationController
       @jobapp = Jobapp.find(params[:id])
     end
 
+    def job_load
+@job = Job.find(params[:job_id])
+end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
       params.require(:jobapp).permit(:message)
     end
+
 end

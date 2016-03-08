@@ -12,7 +12,7 @@
   <dt><strong><%= model_class.human_attribute_name(:area) %>:</strong></dt>
   <dd><%= @job.area %></dd>
 </dl>
-
+<%=link_to "New App", new_job_jobapp_path(@job)%>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               jobs_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

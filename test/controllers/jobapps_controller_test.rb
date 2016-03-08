@@ -21,7 +21,7 @@ class JobappsControllerTest < ActionController::TestCase
       post :create, jobapp: { message: @jobapp.message }
     end
 
-    assert_redirected_to jobapp_path(assigns(:jobapp))
+    assert_redirected_to job_jobapp_path(assigns(:jobapp))
   end
 
   test "should show jobapp" do
@@ -36,7 +36,7 @@ class JobappsControllerTest < ActionController::TestCase
 
   test "should update jobapp" do
     patch :update, id: @jobapp, jobapp: { message: @jobapp.message }
-    assert_redirected_to jobapp_path(assigns(:jobapp))
+    assert_redirected_to job_jobapp_path(assigns(:jobapp))
   end
 
   test "should destroy jobapp" do
@@ -44,6 +44,6 @@ class JobappsControllerTest < ActionController::TestCase
       delete :destroy, id: @jobapp
     end
 
-    assert_redirected_to jobapps_path
+    assert_redirected_to job_jobapp_path
   end
 end

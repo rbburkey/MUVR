@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :jobapps
   resources :reviews
   root 'static#welcome'
   get 'static/welcome'
@@ -9,7 +8,15 @@ Rails.application.routes.draw do
 
   get 'movers/jobs_area'
 
-  resources :jobs
+  resources :jobs do
+
+      resources :jobapps, shallow: true
+      get 'jobs/:job_id/jobapps/new' => 'jobapps#new'
+          post 'jobs/:job_id/jobapps/' => 'jobapps#create'
+      get '/jobs/:job_id/jobapps/:id/edit' => 'jobapps#edit'
+      get '/jobs/:job_id/jobapps/:id' => 'jobapps#show'
+
+  end
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
