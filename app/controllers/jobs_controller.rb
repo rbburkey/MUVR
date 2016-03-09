@@ -26,6 +26,15 @@ marker.infowindow job.name
 end
 end
 
+def map
+  @jobs = Job.all
+  @hash = Gmaps4rails.build_markers(@jobs) do |job, marker|
+marker.lat job.latitude
+marker.lng job.longitude
+marker.infowindow job.name
+ end
+end
+
 
   def client_only
     unless user_signed_in?
