@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :reviews
   root 'static#welcome'
-  get '/welcome' => 'static#welcom'
+
+  get '/welcome' => 'static#welcome'
   get '/about' => 'static#about'
   get '/contact' => 'static#contact'
   get '/howitworks' => 'static#howitworks'
+
 
   get 'users/user_apps'
   get 'movers/jobs_area'

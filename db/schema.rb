@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160308165451) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree

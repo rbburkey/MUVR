@@ -8,10 +8,33 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @hash = Gmaps4rails.build_markers(@jobs) do |job, marker|
+  marker.lat job.latitude
+  marker.lng job.longitude
+  marker.infowindow job.name
+   end
   end
 
 def show
+  # Gmaps.store.markers.filter(function(m) { return m.serviceObject.id == id; })[0]
+  @job = Job.find(params[:id])
+
+  @hash = Gmaps4rails.build_markers([@job]) do |job, marker|
+marker.lat job.latitude
+marker.lng job.longitude
+marker.infowindow job.name
 end
+end
+
+def map
+  @jobs = Job.all
+  @hash = Gmaps4rails.build_markers(@jobs) do |job, marker|
+marker.lat job.latitude
+marker.lng job.longitude
+marker.infowindow job.name
+ end
+end
+
 
   def client_only
     unless user_signed_in?
@@ -20,15 +43,11 @@ end
     end
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
-  def show
-  end
-
 
   def user_apps
     @jobapp = Jobapp.where(user_id: current_user.id)
   end
+
 
   # GET /jobs/new
   def new
@@ -91,6 +110,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name, :description, :area, :image)
+      params.require(:job).permit(:latitude, :longitude, :name, :description, :area, :image)
     end
 end

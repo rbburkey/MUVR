@@ -6,7 +6,7 @@
       <span class="icon-bar"></span>
     </button>
 <%= link_to "Movr", root_path , class: 'navbar-brand' %>
-<nav class="navbar navbar-default navbar-fixed-top">
+<div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <%if user_signed_in?%>
         <li><%= link_to "Portal", users_portal_path %></li>
