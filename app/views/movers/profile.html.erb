@@ -16,15 +16,18 @@
       <h3>I have a truck!<h3>
         <% else %>
         <h3>I don't have a truck<h3>
-      <%end%>
+          <%end%>
 
-      <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
+          <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
 
           <p><%= @mover.bio %></p>
 
-          <div><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
+          <div><%= link_to "Hire" + "#{@mover.first_name}", root_path, class: 'btn btn-success btn-lg'%>
           </div>
         </div>
+
+
+
 
         <div class="col-md-4 text-center">
           <div style="text-center">
