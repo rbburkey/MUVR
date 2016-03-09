@@ -14,9 +14,11 @@ before_action :set_mover, only: [:profile]
     @reviews=Review.all
   end
 
+
 def all_movers
   @movers = Mover.all
 end
+
 
 private
   def set_mover
