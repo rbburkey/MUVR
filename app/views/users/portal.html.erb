@@ -4,7 +4,7 @@
     <p>This is a template for a simple marketing or informational website. </p>
     <br>
     <div class="col-md-4 text-center">
-      <div class="avatar"><%=image_tag("pic2.jpg", class:"default") %></div>
+      <div class="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
     </div>
 
 
@@ -48,7 +48,7 @@
       <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
       <%= link_to "Manage", job_path(jobs), class: "btn btn-warning"%>
       <% if jobs.jobapps.exists? %>
-      <%= link_to "View Applicants", users_user_apps_path(jobs.id), class: "btn btn-success" %></div>
+      <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %></div>
       <% else %>
       <p>No current mover applications</p>
       <% end %>

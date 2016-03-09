@@ -1,9 +1,13 @@
 <h3>Your applications</h3>
+<%@job.jobapps.each do |j|%>
+<%=j.mover.first_name%>
 
-<%=@jobapps.each do |jobappz|%>
-<h3><%="#{jobappz.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
-<h4><%="Message:" + " #{jobappz.message}"%></h4><br>
-<%=form_for(jobappz) do |userzapp| %>
+
+
+
+<h3><%="#{j.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
+<h4><%="Message:" + " #{j.message}"%></h4><br>
+<%=form_for(j) do |userzapp| %>
 <div class="field">
   <%= userzapp.label :accepted %>
   <%= userzapp.check_box :accepted%>
@@ -13,6 +17,7 @@
 <div class="action">
 <%=  userzapp.submit%>
 </div>
+
 
 <%end%>
 <%end%>

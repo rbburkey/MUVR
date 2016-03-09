@@ -24,8 +24,8 @@ before_action :set_user, only: [:profile]
   end
 
   def user_apps
-    # @jobapp = Jobapp.where(user_id: current_user.id)
-    @jobapps=Jobapp.where(job_id: job.id)
+
+    @job = Job.find(params[:job])
   end
 
   private
