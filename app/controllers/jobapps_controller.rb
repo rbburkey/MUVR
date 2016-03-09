@@ -96,6 +96,6 @@ class JobappsController < ApplicationController
 end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
-      params.require(:jobapp).permit(:message, :mover_id)
+      params.require(:jobapp).permit(:message)
     end
 end
