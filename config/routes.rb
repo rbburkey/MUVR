@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'users/user_apps'
   get 'movers/jobs_area'
   resources :jobs do
+
       resources :jobapps, shallow: true
+
   end
 
   devise_for :movers, :controllers => { registrations: 'registrations' }

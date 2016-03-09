@@ -26,6 +26,7 @@ before_action :set_user, only: [:profile]
 
   def user_apps
     @jobapp = Jobapp.where(user_id: current_user.id)
+    
   end
 
   private

@@ -1,5 +1,20 @@
 <h3>Your applications</h3>
+
 <% @jobapp.each do |users_app| %>
 <%=users_app.message%>
 <%=users_app.mover_id%>
+<%if users_app.accepted =true%>
+<%=form_for(users_app) do |userzapp| %>
+<div class="field">
+  <%= userzapp.label :accepted %>
+  <%= userzapp.check_box :accepted%>
+</div>
+<div class="actions">
+  <%= userzapp.submit %>
+</div>
+<%end%>
+<%else%>
+Accepted
+
+<%end%>
 <%end%>
