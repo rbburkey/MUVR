@@ -34,9 +34,6 @@ end
     end
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
-
 
   def user_apps
     @jobapp = Jobapp.where(user_id: current_user.id)

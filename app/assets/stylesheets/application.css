@@ -51,7 +51,7 @@ h2 {
   text-align: center;
   color: #fc9f00;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 h3 {
@@ -80,7 +80,14 @@ p {
 }
 
 .profile h1 {
-  margin-bottom: 80px;
+  margin-bottom: 30px;
+}
+
+.subheadline {
+  margin-bottom: 60px;
+  color: #fc9f00;
+  font-weight: 500;
+  font-size: 35px;
 }
 
 .btn-sq-lg {
@@ -118,6 +125,14 @@ p {
 .avatar {
   width: 300px;
   height: 300px;
+  padding: 10px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.default {
+  width: 200px;
+  height: 200px;
   padding: 10px;
   overflow: hidden;
   vertical-align: top;
