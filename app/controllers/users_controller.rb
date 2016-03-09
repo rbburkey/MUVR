@@ -3,7 +3,7 @@ before_action :set_user, only: [:profile]
 
   def portal
 
-    @user= current_user
+    @user = current_user
     @reviews=Review.all
     @movers=Mover.all
     @jobs = Job.where(user_id: current_user.id)
@@ -35,7 +35,6 @@ before_action :set_user, only: [:profile]
 
 
   def movers_area
-
     @movers = Mover.where(service_area: current_user.user_area)
   end
 

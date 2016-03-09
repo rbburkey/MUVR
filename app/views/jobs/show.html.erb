@@ -1,8 +1,10 @@
 <%- model_class = Job -%>
-<div class="page-header">
+<div class="jumbotron">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
 
+<div class="container">
+<div class="column">
+  <div class=".col-md-4">
 <dl class="dl-horizontal">
   <td><%= image_tag @job.image.url(:medium) %></td>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -26,7 +28,7 @@
 <% if @job.jobapps.where(mover_id: current_mover.id).first %>
 <p>Pending Approval</p>
 <% else %>
-<%=link_to "Apply for this Job!", new_job_jobapp_path(@job)%>
+<%=link_to "Apply for this Job!", new_job_jobapp_path(@job), :class => 'btn btn-default'%>
 <% end %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               jobs_path, :class => 'btn btn-default'  %>
@@ -38,3 +40,8 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
