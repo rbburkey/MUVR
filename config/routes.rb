@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static#contact'
   get '/howitworks' => 'static#howitworks'
 
-
+  get 'movers/mover_apps'
   get 'users/user_apps'
   get 'movers/jobs_area'
 

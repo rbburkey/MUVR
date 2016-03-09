@@ -48,7 +48,7 @@
       <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
       <%= link_to "Manage", job_path(jobs), class: "btn btn-warning"%>
       <% if jobs.jobapps.exists? %>
-      <%= link_to "View Applicants", users_user_apps_path, class: "btn btn-success" %></div>
+      <%= link_to "View Applicants", users_user_apps_path(jobs.id), class: "btn btn-success" %></div>
       <% else %>
       <p>No current mover applications</p>
       <% end %>

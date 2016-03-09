@@ -6,7 +6,6 @@ before_action :set_user, only: [:profile]
     @user = current_user
     @reviews=Review.all
     @movers=Mover.all
-    @jobapps = Jobapp.all
     @jobs = Job.where(user_id: current_user.id)
 
   end
@@ -25,14 +24,15 @@ before_action :set_user, only: [:profile]
   end
 
   def user_apps
-    @jobapp = Jobapp.where(user_id: current_user.id)
-    
+    # @jobapp = Jobapp.where(user_id: current_user.id)
+    @jobapps=Jobapp.where(job_id: job.id)
   end
 
   private
 
   def user_jobs
   @jobs = Job.where(user_id: current_user.id)
+
   end
 
 
