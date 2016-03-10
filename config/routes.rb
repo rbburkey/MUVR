@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   get '/jobs/map' => 'jobs#map'
 
   resources :jobs do
-
-      resources :jobapps, shallow: true
+    resources :jobapps, shallow: true
 
   end
 
