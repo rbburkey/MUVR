@@ -54,20 +54,22 @@
             </div>
 
             <div class="field">
+              <%= f.label :password %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+              <%= f.password_field :password, autocomplete: "off" %>
             </div>
 
             <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
             </div>
-          </div>
-          <div class="actions">
-            <%= f.button "Sign Up!", class: 'btn-lg btn-warning btn-lg' %>
-          </div>
-          <% end %>
+
+            <div class="actions">
+              <%= f.button "Sign up", class: 'btn-lg btn-warning btn-block' %>
+            </div>
+            <% end %>
         </div>
       </div>
     </div>
