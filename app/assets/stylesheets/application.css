@@ -93,13 +93,14 @@ p {
 }
 
 .jobappwindow {
-  min-height: 600px;
+  min-height: 700px;
 }
 
 
 .jumbotron {
   margin: 0px;
 }
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -235,7 +236,16 @@ padding-bottom: 100px;
 
 .image {
   width: 300px;
-  height: 230px;
+  height: 220px;
+  padding: 10px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+
+.imagemovers {
+  width: 300px;
+  height: 250px;
   padding: 10px;
   overflow: hidden;
   vertical-align: top;
@@ -247,14 +257,6 @@ padding-bottom: 100px;
   width: auto;
 }
 
-.imagemovers {
-  width: 300px;
-  height: 250px;
-  padding: 10px;
-  overflow: hidden;
-  vertical-align: top;
-}
-
 .avatar {
   width: 300px;
   height: 300px;
@@ -264,18 +266,8 @@ padding-bottom: 100px;
 }
 
 .avatar img {
-  max-width: 100%;
-  height: auto;
+  min-height: 100%;
   width: auto;
-}
-
-
-.default {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  overflow: hidden;
-  vertical-align: top;
 }
 
 .orange_button a {

@@ -5,7 +5,7 @@
     <div class=".col-md-4">
       <div class="column">
         <h4><%= "#{mover.first_name}" + " #{mover.last_name}"%></h4>
-        <div class="imagemovers"><%= image_tag mover.avatar.url(:medium) %></div>
+        <div class="avatar"><%= image_tag mover.avatar.url(:medium) %></div>
         <h3><%= "Is available in" + " #{mover.service_area}" %></h3>
         <p><%= link_to "See Profile", mover_prof_path(mover), class: 'btn btn-success' %></p>
       </div>
@@ -13,5 +13,6 @@
 
     </div>
   </div>
+</div>
 </div>
 </div>
