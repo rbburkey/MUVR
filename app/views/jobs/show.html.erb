@@ -4,6 +4,7 @@
 
 <div class="jumbotron">
   <div class="container">
+    <div class="jobappwindow">
     <div class="row">
 
       <!-- LEFT CONTAINER -->
@@ -13,7 +14,7 @@
           <h3><%="Job's Name: " + "#{@job.name}"%></h3>
           <h3><%="Area: " + "#{@job.area}"%></h3>
           <h3><%="About: " + "#{@job.description}"%></h3>
-          <% if current_user %>
+          <% if current_user  %>
           <%= link_to t('.back', :default => t("helpers.links.back")),
           jobs_path, :class => 'btn btn-default'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -61,5 +62,6 @@
 
     </div>
   </div>
+</div>
 </div>
 </div>

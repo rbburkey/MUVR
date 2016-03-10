@@ -1,21 +1,44 @@
-<h3>Your applications</h3>
-<div class="container">
-<%@job.jobapps.each do |j|%>
-<%=j.mover.first_name%>
-<h3><%="#{j.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
-<h4><%="Message:" + " #{j.message}"%></h4><br>
-<%=form_for(j) do |userzapp| %>
-<div class="field">
-  <%= userzapp.label :accepted %>
-  <%= userzapp.radio_button_tag :accepted, 'Accept'%>
-  <%= userzapp.label :not_accepted %>
-  <%= userzapp.radio_button_tag :not_accepted, 'Reject'%>
-</div>
-<div class="action">
-<%=  userzapp.submit%>
-</div>
 
-
-<%end%>
-<%end%>
-</div>
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h1 class="section-heading">Contact Us</h1>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <div><%= link_to "SEND", root_path, class: 'btn btn-warning btn-lg'%></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
