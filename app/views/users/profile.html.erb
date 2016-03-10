@@ -20,21 +20,30 @@
 
 
     <div class="col-md-4 text-center">
-      <h2>Your Reviews</h2>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <%@reviews.each do |user_review|%>
-      <!-- want userz=true because we want reviews about user  -->
-      <%if user_review.user_id == @user.id && user_review.userz?%>
-      <%= user_review.title%>
-      <%= user_review.body%>
-      <%= user_review.user_id%>
-      <%= user_review.userz%>
-      <%end%>
-      <%end%>
+      <div class="comment-form">
+        <h2>Add Your Review</h2>
+          <%= form_for [@user.reviews.new] do |f| %>
+          <%= f.hidden_field :user_id %><br>
+          <div class="col-md-8"><%= f.text_field :body, class: "form-control", placeholder: 'Add a comment...' %></div>
+          <div class="col-md-1"><%= f.button :submit, class: "btn btn-success"  %></div>
+          <% end %>
+        </div>
+
+
+      <div style="text-center">
+        <br>
+        <br>
+        <h2><%= "#{@user.first_name}'s" + " Reviews" %></h2>
+        <%@reviews.each do |user_review|%>
+        <!-- want userz=true because we want reviews about users  -->
+        <%if user_review.user_id == @user.id && user_review.userz?%>
+        <p><i class="fa fa-comments fa-lg"></i> <%= user_review.body%><p>
+        <%end%>
+        <%end%>
+      </div>
     </div>
+
+
+
   </div>
 </div>

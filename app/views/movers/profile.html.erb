@@ -23,30 +23,33 @@
 
           <p><%= @mover.bio %></p>
 
-          <div><%= link_to "Hire" + " #{@mover.first_name}", root_path, class: 'btn btn-success btn-lg'%>
-          </div>
         </div>
 
 
-
-
         <div class="col-md-4 text-center">
-          <div style="text-center">
-            <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
+          <div class="comment-form">
+            <h2>Add Your Review</h2>
+              <%= form_for [@mover.reviews.new] do |f| %>
+              <%= f.hidden_field :mover_id %><br>
+              <div class="col-md-8"><%= f.text_field :body, class: "form-control", placeholder: 'Add a comment...' %></div>
+              <div class="col-md-1"><%= f.button :submit, class: "btn btn-success"  %></div>
+              <% end %>
+            </div>
 
+
+
+          <div style="text-center">
+            <br>
+            <br>
+            <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
             <%@reviews.each do |mover_review|%>
-            <!-- want userz=false because we want reviews about movers -->
+            <!-- want userz=true because we want reviews about users  -->
             <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
-            <%= mover_review.body%>
-            <%= mover_review.mover_id%>
-            <%= mover_review.userz%>
+            <p><i class="fa fa-comments fa-lg"></i> <%= mover_review.body%><p>
             <%end%>
             <%end%>
+
+
           </div>
         </div>
 

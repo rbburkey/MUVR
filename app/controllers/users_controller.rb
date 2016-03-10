@@ -10,7 +10,6 @@ before_action :set_user, only: [:profile]
 
   end
 
-# SHOW
   def profile
   @reviews=Review.all
   end
@@ -19,12 +18,15 @@ before_action :set_user, only: [:profile]
     @users = User.all
   end
 
+  def all_users
+    @users = User.all
+  end
+
   def create
     @user = User.new(user_params)
   end
 
   def user_apps
-
     @job = Job.find(params[:job])
   end
 
