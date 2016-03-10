@@ -4,7 +4,7 @@
     <h2 class="subheadline">Client Information</h2>
 
     <div class="col-md-4 text-center">
-      <div class="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
+      <div class="avatar"><%=image_tag("pic2.jpg", class:"default") %></div>
     </div>
 
 
@@ -20,21 +20,26 @@
 
 
     <div class="col-md-4 text-center">
-      <h2>Your Reviews</h2>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <p>Some review here about lina</p>
-      <%@reviews.each do |user_review|%>
-      <!-- want userz=true because we want reviews about user  -->
-      <%if user_review.user_id == @user.id && user_review.userz?%>
-      <%= user_review.title%>
-      <%= user_review.body%>
-      <%= user_review.user_id%>
-      <%= user_review.userz%>
-      <%end%>
-      <%end%>
+      <div style="text-center">
+        <h2><%= "#{@user.first_name}'s" + " Reviews" %></h2>
+        <%@reviews.each do |user_review|%>
+        <!-- want userz=true because we want reviews about users  -->
+        <%if user_review.user_id == @user.id && user_review.userz?%>
+        <p><i class="fa fa-comments fa-lg"></i> <%= user_review.body%><p>
+        <%end%>
+        <%end%>
+
+        <div class="comment-form">
+            <%= form_for [@user.reviews.new] do |f| %>
+            <%= f.hidden_field :user_id %><br>
+            <%= f.text_field :body, placeholder: 'Add a comment...' %>
+            <%= f.button :submit, class: "btn-xs btn btn-success"  %>
+            <% end %>
+          </div>
+      </div>
     </div>
+
+
+
   </div>
 </div>

@@ -8,7 +8,6 @@ before_action :set_mover, only: [:profile]
     @mover = current_mover
     @reviews=Review.all
     @jobs = Job.where(area: current_mover.service_area)
-
   end
 
   def profile

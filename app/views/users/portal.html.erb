@@ -1,10 +1,10 @@
 <div class="jumbotron">
-  <div class="profile container">
+  <div class="container">
     <h1><%= "#{@user.first_name}'s" + " Portal"%></h1>
     <p>This is a template for a simple marketing or informational website. </p>
     <br>
     <div class="col-md-4 text-center">
-      <div class="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
+      <div class="avatar"><%=image_tag("pic2.jpg", class:"default") %></div>
     </div>
 
 
@@ -20,18 +20,12 @@
 
 
       <div class="col-md-4 text-center">
-        <h2>Your Reviews</h2>
-        <p>Some review user wrote</p>
-        <p>Some review user wrote</p>
-        <p>Some review user wrote</p>
-        <p>Some review user wrote</p>
+        <h2>Reviews You Posted</h2>
+
         <%@reviews.each do |user_review|%>
         <!-- want userz=false because we want reviews about users posted by this user -->
         <%if user_review.user_id == current_user.id && !user_review.userz?%>
-        <%= user_review.title%>
-        <%= user_review.body%>
-        <%= user_review.user_id%>
-        <%= user_review.userz%>
+        <p><%= user_review.body%><p>
         <%end%>
         <%end%>
       </div>
@@ -50,7 +44,7 @@
       <% if jobs.jobapps.exists? %>
       <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %></div>
       <% else %>
-      <p>No current mover applications</p>
+      <h5><i class="fa fa-file-text fa-lg"></i> No current applications</h5>
       <% end %>
     </div>
     <% end %>
