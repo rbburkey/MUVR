@@ -22,24 +22,17 @@
 
    <div class="col-md-4 text-center">
      <div style="text-align: center">
-       <h2>Your Reviews</h2>
-       <p>Some review mover wrote</p>
-       <p>Some review mover wrote</p>
-       <p>Some review mover wrote</p>
-       <p>Some review mover wrote</p>
-
+       <h2>Reviews You Posted</h2>
        <%@reviews.each do |mover_review|%>
        <!-- want userz=true because we want reviews about users  -->
-       <%if mover_review.mover_id == @mover.id && mover_review.userz?%>
-       <%= mover_review.title%>
-       <%= mover_review.body%>
-       <%= mover_review.mover_id%>
-       <%= mover_review.userz%>
+       <%if mover_review.mover_id == current_mover.id %>
+       <p><%= mover_review.body%></p>
        <%end%>
        <%end%>
      </div>
    </div>
  </div>
+
 
 <div class="profile container">
  <h1>Jobs in your area</h1>

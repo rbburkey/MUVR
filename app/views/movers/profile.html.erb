@@ -28,25 +28,23 @@
         </div>
 
 
-
-
         <div class="col-md-4 text-center">
           <div style="text-center">
             <h2><%= "#{@mover.first_name}'s" + " Reviews" %></h2>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-            <p>Some review here about teresa</p>
-
             <%@reviews.each do |mover_review|%>
-            <!-- want userz=false because we want reviews about movers -->
+            <!-- want userz=true because we want reviews about users  -->
             <%if mover_review.mover_id == @mover.id && !mover_review.userz?%>
-            <%= mover_review.body%>
-            <%= mover_review.mover_id%>
-            <%= mover_review.userz%>
+            <p><i class="fa fa-comments fa-lg"></i> <%= mover_review.body%><p>
             <%end%>
             <%end%>
+
+            <div class="comment-form">
+                <%= form_for [@mover.reviews.new] do |f| %>
+                <%= f.hidden_field :mover_id %><br>
+                <%= f.text_field :body, placeholder: 'Add a comment...' %>
+                <%= f.button :submit, class: "btn-xs btn btn-success"  %>
+                <% end %>
+              </div>
           </div>
         </div>
 
