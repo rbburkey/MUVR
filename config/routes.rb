@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
 
-
+  resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
