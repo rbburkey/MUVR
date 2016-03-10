@@ -2,9 +2,6 @@
 <%@job.jobapps.each do |j|%>
 <%=j.mover.first_name%>
 
-
-
-
 <h3><%="#{j.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
 <h4><%="Message:" + " #{j.message}"%></h4><br>
 <%=form_for(j) do |userzapp| %>
