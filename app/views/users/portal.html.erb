@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div class="profile container">
+  <div class="container">
     <h1><%= "#{@user.first_name}'s" + " Portal"%></h1>
     <p>This is a template for a simple marketing or informational website. </p>
     <br>
@@ -44,7 +44,7 @@
       <% if jobs.jobapps.exists? %>
       <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %></div>
       <% else %>
-      <p>No current mover applications</p>
+      <h5><i class="fa fa-file-text fa-lg"></i> No current applications</h5>
       <% end %>
     </div>
     <% end %>
