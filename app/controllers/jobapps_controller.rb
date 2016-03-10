@@ -23,8 +23,6 @@ class JobappsController < ApplicationController
   # GET /jobapps/1.json
   def show
 
-
-
   end
 
   # GET /jobapps/new
@@ -98,6 +96,6 @@ class JobappsController < ApplicationController
 end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
-      params.require(:jobapp).permit(:message)
+      params.require(:jobapp).permit(:message, :mover_id)
     end
 end

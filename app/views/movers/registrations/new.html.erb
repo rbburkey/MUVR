@@ -1,50 +1,44 @@
 <div class="registration-bg">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="log-in panel">
-          <div class="panel-heading">
-            <h2>Sign Up</h2>
+    <div class="row panel-heading">
+      <div class="col-md-9 log-in2 panel panel2">
+        <h1>Movr Sign Up</h1>
+        <div class="row panel-heading">
+          <div class="col-xs-6 col-sm-6">
 
             <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 
-            <div class="panel-body">
-              <%= f.label :first_name %><br />
-              <%= f.text_field :first_name %>
+            <div class="field">
+              <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
             </div>
 
             <div class="field">
-              <%= f.label :last_name %><br />
-              <%= f.text_field :last_name %>
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
             </div>
 
             <div class="field">
-              <%= f.label :user_name %><br />
-              <%= f.text_field :user_name %>
-            </div>
-            <div class="field">
-              <%= f.label :bio %><br />
-              <%= f.text_area :bio %>
+              <%= f.text_field :user_name, class: "form-control", placeholder: "Username" %>
             </div>
 
             <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true %>
+              <p>Profile Picture</p>
+              <%= f.file_field :avatar %>
+            </div>
+
+
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "email" %>
+            </div>
+            <div class="field">
+              <%= f.text_area :bio, class: "form-control", placeholder: "Tell us a bit about yourself" %>
             </div>
 
           </div>
-        </div>
-      </div>
 
-      <div class="col-md-6">
-        <div class="log-in panel">
-          <div class="panel-heading">
 
-            <div class="field">
-              <%= f.label :avatar %><br>
-              <%= f.file_field :avatar %>
-            </div>
+
+          <div class="col-xs-4 col-sm-6">
 
             <div class="field">
               <%= f.label :truck_available %>
@@ -52,34 +46,30 @@
             </div>
 
             <div class="field">
-              <%= f.label :drivers_license %><br />
-              <%= f.text_field :drivers_license %>
+              <%= f.text_field :drivers_license, class: "form-control", placeholder: "Driver's License Number" %>
             </div>
 
             <div class="field">
-              <%= f.label :service_area %><br />
-              <%= f.text_field :service_area %>
+              <%= f.text_field :service_area, class: "form-control", placeholder: "Area you rather work" %>
             </div>
 
             <div class="field">
-              <%= f.label :password %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "off" %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
             </div>
 
             <div class="field">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
             </div>
-
-            <div class="actions">
-              <%= f.button "Sign up", class: 'btn-lg btn-warning btn-block' %>
-            </div>
-            <% end %>
           </div>
+          <div class="actions">
+            <%= f.button "Sign Up!", class: 'btn-lg btn-warning btn-lg' %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -1,5 +1,5 @@
 <h3>Your applications</h3>
 <% @jobapp.each do |users_app| %>
-<%=users_app.message%>
-<%=users_app.mover_id%>
+<h3><%="#{users_app.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
+<h4><%="Message:" + " #{users_app.message}"%></h4><br>
 <%end%>

@@ -1,10 +1,15 @@
 <div class="jumbotron">
-  <div class="profile container">
-    <h1>All Movers</h1>
-    <div style="text-align: center">
-      <% @movers.each do |mover| %>
-        <p><%= link_to mover.user_name, mover_prof_path(mover), class: 'btn btn-success btn-lg' %></p>
-      <% end %>
+<div class="container">
+  <h1>All Movers</h1>
+  <% @movers.each do |mover| %>
+  <div class=".col-md-4">
+    <div class="column">
+      <h4><%= "#{mover.first_name}" + " #{mover.last_name}"%></h4>
+      <div class="image"><%= image_tag mover.avatar.url(:medium) %></div>
+      <h3><%= "Is available in" + " #{mover.service_area}" %></h3>
+      <p><%= link_to "See Profile", mover_prof_path(mover), class: 'btn btn-success' %></p>
     </div>
+    <% end %>
   </div>
+</div>
 </div>

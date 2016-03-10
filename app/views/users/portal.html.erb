@@ -1,26 +1,55 @@
 <div class="jumbotron">
   <div class="profile container">
-    <%= image_tag @user.avatar.url(:medium) %>
-    <h1><%= "#{@user.first_name}'s" + " Portal"  %></h1>
+    <h1><%= "#{@user.first_name}'s" + " Portal"%></h1>
     <p>This is a template for a simple marketing or informational website. </p>
-    <div style="text-align: center"><%= link_to "Create Job", new_job_path, class: 'btn btn-primary btn-lg'%></div>
-    <div style="text-align: center">
-      <h2>Your Jobs</h2>
-      <% @jobs.each do |job| %>
-        <p><%= job.name %></p>
-      <% end %>
+    <br>
+    <div class="col-md-4 text-center">
+      <div class="avatar"><%=image_tag("pic2.jpg", class:"default") %></div>
     </div>
-    <div style="text-align: center">
-      <h2>Your Reviews</h2>
-    <%@reviews.each do |user_review|%>
-    <!-- want userz=false because we want reviews about movers posted by this user -->
-    <%if user_review.user_id == current_user.id && !user_review.userz?%>
-    <%= user_review.title%>
-    <%= user_review.body%>
-    <%= user_review.user_id%>
-    <%= user_review.userz%>
-    <%end%>
-    <%end%>
+
+
+    <div class="col-md-4 text-center">
+      <h2><%= "#{@user.first_name}" + " Create a Job!"%></h2>
+      <br>
+        <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
+        <br>
+        <p>Make changes to your account</p>
+        <br>
+        <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-warning btn-lg'%></div>
     </div>
+
+
+      <div class="col-md-4 text-center">
+        <h2>Your Reviews</h2>
+        <p>Some review user wrote</p>
+        <p>Some review user wrote</p>
+        <p>Some review user wrote</p>
+        <p>Some review user wrote</p>
+        <%@reviews.each do |user_review|%>
+        <!-- want userz=false because we want reviews about users posted by this user -->
+        <%if user_review.user_id == current_user.id && !user_review.userz?%>
+        <%= user_review.title%>
+        <%= user_review.body%>
+        <%= user_review.user_id%>
+        <%= user_review.userz%>
+        <%end%>
+        <%end%>
+      </div>
+
+    </div>
+
+<div class="profile container">
+  <h1><%= "#{@user.first_name}'s" + " Jobs"%></h1>
+  <%@jobs.each do |jobs|%>
+  <div class=".col-md-4">
+    <div class="column">
+      <h4><%= jobs.name %></h4>
+      <h3><%= "Located in: " + "#{jobs.area}"%></h3>
+      <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
+      <%= link_to "Manage", job_path(jobs), class: "btn btn-warning"%>
+    </div>
+    <% end %>
   </div>
+  </div>
+</div>
 </div>

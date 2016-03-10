@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   resources :reviews
   root 'static#welcome'
-  get 'static/welcome'
-  get 'static/about'
-  get 'static/contact'
+
+  get '/welcome' => 'static#welcome'
+  get '/about' => 'static#about'
+  get '/contact' => 'static#contact'
+  get '/howitworks' => 'static#howitworks'
 
 
   get 'users/user_apps'
   get 'movers/jobs_area'
-
+  get '/jobs/map' => 'jobs#map'
   resources :jobs do
       resources :jobapps, shallow: true
   end
