@@ -1,18 +1,23 @@
 <div class="jumbotron">
-<div class="container">
-  <h1>All Jobs</h1>
-  <%= link_to "Open Map", jobs_map_path, class: "btn btn-success btn-lg"%>
+  <div class="container">
+
+    <h1>All Jobs</h1>
+    <div class="text-center"><%= link_to "Open Map", jobs_map_path, class: "btn btn-success btn-lg"%></div>
 
 
-  <% @jobs.each do |job| %>
-  <div class=".col-md-4">
-    <div class="column">
-      <h4><%= "#{job.name}"%></h4>
-      <h3><%= "Located in: " + "#{job.area}"%></h3>
-      <div class="image"><%= image_tag job.image.url(:medium) %></div>
-      <%= link_to "See Details", job_path(job), class: "btn btn-primary"%>
+    <% @jobs.each do |job| %>
+    <div class=".col-md-4">
+      <div class="column">
+        <h4><%= "#{job.name}"%></h4>
+        <h3><%= "Located in: " + "#{job.area}"%></h3>
+        <div class="image"><%= image_tag job.image.url(:medium) %></div>
+        <%= link_to "See Details", job_path(job), class: "btn btn-success"%>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+
+
+    </div>
   </div>
 </div>
 </div>

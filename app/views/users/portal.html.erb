@@ -33,7 +33,10 @@
     </div>
 
 <div class="profile container">
+  <div class="portaljobs">
   <h1><%= "#{@user.first_name}'s" + " Jobs"%></h1>
+  <% if @jobs.present?%>
+
   <%@jobs.each do |jobs|%>
   <div class=".col-md-4">
     <div class="column">
@@ -48,7 +51,14 @@
       <% end %>
     </div>
     <% end %>
+
+    <% else %>
+    <h3>Uh Oh... You don't have any jobs!</h3>
+      <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
+    <% end %>
+
   </div>
   </div>
+</div>
 </div>
 </div>

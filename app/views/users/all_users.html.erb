@@ -1,13 +1,14 @@
 <div class="jumbotron">
-<div class="container">
-  <h1>All Clients</h1>
-  <% @users.each do |user| %>
-  <div class=".col-md-4">
-    <div class="column">
-      <h2><%= "#{user.first_name.capitalize}" + " #{user.last_name.capitalize}"%></h2>
-      <p><%= link_to "See Profile", user_prof_path(user), class: 'btn btn-success' %></p>
+  <div class="container">
+    <h1>All Clients</h1>
+    <% @users.each do |user| %>
+    <div class=".col-md-4">
+      <div class="column">
+        <h2><%= "#{user.first_name.capitalize}" + " #{user.last_name.capitalize}"%></h2>
+        <p><%= link_to "See Profile", user_prof_path(user), class: 'btn btn-success' %></p>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 </div>

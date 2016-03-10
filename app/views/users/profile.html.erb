@@ -20,7 +20,19 @@
 
 
     <div class="col-md-4 text-center">
+      <div class="comment-form">
+        <h2>Add Your Review</h2>
+          <%= form_for [@user.reviews.new] do |f| %>
+          <%= f.hidden_field :user_id %><br>
+          <div class="col-md-8"><%= f.text_field :body, class: "form-control", placeholder: 'Add a comment...' %></div>
+          <div class="col-md-1"><%= f.button :submit, class: "btn btn-success"  %></div>
+          <% end %>
+        </div>
+
+
       <div style="text-center">
+        <br>
+        <br>
         <h2><%= "#{@user.first_name}'s" + " Reviews" %></h2>
         <%@reviews.each do |user_review|%>
         <!-- want userz=true because we want reviews about users  -->
@@ -28,14 +40,6 @@
         <p><i class="fa fa-comments fa-lg"></i> <%= user_review.body%><p>
         <%end%>
         <%end%>
-
-        <div class="comment-form">
-            <%= form_for [@user.reviews.new] do |f| %>
-            <%= f.hidden_field :user_id %><br>
-            <%= f.text_field :body, placeholder: 'Add a comment...' %>
-            <%= f.button :submit, class: "btn-xs btn btn-success"  %>
-            <% end %>
-          </div>
       </div>
     </div>
 
