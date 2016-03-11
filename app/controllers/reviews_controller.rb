@@ -11,6 +11,13 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1.json
   def show
+    if user_signed_in?
+    redirect_to user_portal_path(current_user)
+  else
+    redirect_to movers_portal_path(current_mover)
+
+  end
+
   end
 
   # GET /reviews/new
