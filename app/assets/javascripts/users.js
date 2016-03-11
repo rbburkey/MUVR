@@ -1,22 +1,10 @@
-// "use strict";
-// $( document ).ready(function() {
-//     $("#jobapp_accepted").click(function() {
-//         var isAccepted = $("#jobapp_accepted").prop('checked', true);
-//         var isRejected = $("#jobapp_not_accepted").prop('checked', true);
-//         if(isAccepted) {
-//           console.log("nadiad");
-//             $("#jobapp_not_accepted").attr('checked', false);
-//         }
-//     });
-//
-//     $("#jobapp_not_accepted").click(function() {
-//         var isRejected = $("#jobapp_not_accepted").prop('checked', true);
-//         if(isRejected) {
-//           console.log("nadia");
-//             $("#jobapp_not_accepted").attr('checked', false);
-//         }
-//     });
-// });
+"use strict";
+$( document ).ready(function() {
+    $(".btn-success").click(function() {
+      $("#jobapp_accepted").prop('checked', true);
+      console.log("success");
+    });
+});
 
 
 
@@ -45,7 +33,7 @@
 //     $("#jobapp_not_accepted").prop('checked', true);
 //   });
 // });
-// 
+//
 // $( document ).ready(function() {
 //   $('#job_accepted').click(function() {
 //         var isChecked = $('[id^=accepted]').prop('checked', true);

@@ -6,23 +6,22 @@
         <div class="col-md-4 col-md-offset-4">
 
             <%@job.jobapps.each do |job|%>
-            <%=job.mover.first_name%>
             <h3><%="#{job.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
             <h4><%="Message:" + " #{job.message}"%></h4><br>
             <%=form_for(job) do |userzapp| %>
             <div class="field text-center">
+            <div class="hide">
               <%= userzapp.label :accepted %>
-              <%= userzapp.check_box :accepted%>
+              <%= userzapp.check_box( :accepted, {checked: false})%>
             </div>
             <div class="hide">
               <%= userzapp.label :not_accepted %>
               <%= userzapp.check_box(:not_accepted, {checked: true})%>
             </div>
             <div class="action">
-              <%=  userzapp.submit%>
+              <%=userzapp.submit "Confirm this Mover!", class: "btn btn-success"%>
             </div>
             </div>
-          </div>
             <%end%>
             <%end%>
           </div>
