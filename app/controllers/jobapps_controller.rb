@@ -1,6 +1,6 @@
 class JobappsController < ApplicationController
   before_action :set_jobapp, only: [:show, :edit, :update, :destroy]
-  before_filter :mover_only, only: [:create, :edit, :update, :destroy, :new]
+  before_filter :mover_only, only: [:create, :edit, :destroy, :new]
   before_action :job_load, only: [:create, :new]
 
 
@@ -93,9 +93,9 @@ class JobappsController < ApplicationController
 
     def job_load
       @job = Job.find(params[:job_id])
-end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
-      params.require(:jobapp).permit(:message, :mover_id)
+      params.require(:jobapp).permit(:message, :accepted, :not_accepted)
     end
 end

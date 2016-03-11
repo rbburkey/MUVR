@@ -7,6 +7,9 @@
     <title><%= content_for?(:title) ? yield(:title) : "Muvr" %></title>
     <%= csrf_meta_tags %>
 
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
@@ -43,9 +46,12 @@
           <%= yield %>
 
     </div> <!-- /container -->
-    <footer class="footer">
+
+    <footer>
+      <div class="footer">
       <h1>Contact Us!</h1>
       <p>Something long nice text here about how good we are</p>
+    </div>
     </footer>
 
   </body>

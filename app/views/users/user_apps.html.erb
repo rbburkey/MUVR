@@ -1,5 +1,31 @@
-<h3>Your applications</h3>
-<% @jobapp.each do |users_app| %>
-<h3><%="#{users_app.mover.first_name}".capitalize + " wants to help with your move!"%></h3><br>
-<h4><%="Message:" + " #{users_app.message}"%></h4><br>
-<%end%>
+<div class="jumbotron">
+  <div class="container">
+    <div class="jobappwindow">
+      <h1>Your applications</h1>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+
+        <%@job.jobapps.each do |j|%>
+        <h2><%="#{j.mover.first_name}".capitalize + " #{j.mover.last_name}".capitalize%></h2>
+        <h3>wants to help with your move!</h3>
+        <p><%="Message:" + " #{j.message}"%></p>
+
+        <div>
+          <%=form_for(j) do |userzapp| %>
+          <div class="field text-center">
+            <%= userzapp.label :accepted %>
+            <%= userzapp.radio_button_tag :accepted, 'Accept'%>
+            <%= userzapp.label :not_accepted %>
+            <%= userzapp.radio_button_tag :not_accepted, 'Reject'%>
+            <%=  userzapp.submit class: 'btn-lg btn-success btn-lg'%>
+          </div>
+          <%end%>
+          <%end%>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

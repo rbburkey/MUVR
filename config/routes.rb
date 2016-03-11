@@ -7,12 +7,15 @@ Rails.application.routes.draw do
   get '/contact' => 'static#contact'
   get '/howitworks' => 'static#howitworks'
 
-
+  get 'movers/mover_apps'
   get 'users/user_apps'
   get 'movers/jobs_area'
+
   get '/jobs/map' => 'jobs#map'
+
   resources :jobs do
-      resources :jobapps, shallow: true
+    resources :jobapps, shallow: true
+
   end
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
@@ -25,6 +28,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: "user/registrations" }
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
+  get 'all_users' => "users#all_users"
+
 
   resources :charges
   # The priority is based upon order of creation: first created -> highest priority.

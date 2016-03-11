@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :movers, through: :jobs
-  has_many :jobs, through: :jobapps
-  has_many :reviews
-  has_many :jobapps
+  has_many :jobs, through: :jobapps, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :jobapps, dependent: :destroy
 
 
   has_attached_file :avatar, styles: {:medium => "300x300>", :thumb => "100x100>"} #:path =>'controllers/user/registrations_controller.rb'

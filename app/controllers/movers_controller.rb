@@ -19,6 +19,9 @@ def all_movers
   @movers = Mover.all
 end
 
+def mover_apps
+  @jobapps = Jobapp.where(mover_id: current_mover.id)
+end
 
 private
   def set_mover
@@ -28,6 +31,7 @@ private
   def mover_params
     params.require(:mover).permit(:avatar)
   end
+
 
 end
 # private
