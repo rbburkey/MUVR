@@ -1,6 +1,10 @@
 class ChargesController < ApplicationController
   def new
+<<<<<<< HEAD
   end
+=======
+end
+>>>>>>> master
 
 def create
   # Amount in cents

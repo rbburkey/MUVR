@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'movers/mover_apps'
   get 'users/user_apps'
   get 'movers/jobs_area'
+  resources :charges
 
   get '/jobs/map' => 'jobs#map'
 
