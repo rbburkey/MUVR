@@ -25,6 +25,7 @@
         <li><%= link_to "Find a Client", all_users_path  %></li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Applications", movers_mover_apps_path %>
           <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
           <li><%= link_to "Sign Up User", new_user_registration_path %></li>
         </ul>
