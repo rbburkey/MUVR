@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: {:medium => "300x300>", :thumb => "100x100>"} #:path =>'controllers/user/registrations_controller.rb'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   def name
-    return "You should add method :first_name in your Messageable model"
+  username
   end
 
   #Returning the email address of the model if an email should be sent for this object (Message or Notification).

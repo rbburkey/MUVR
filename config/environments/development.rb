@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-
+config.action_mailer.default_url_options = { :host => "dev.yourhost.com" }
 
   config.action_mailer.perform_deliveries = true
   config.eager_load = false
