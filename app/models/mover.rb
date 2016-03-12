@@ -14,7 +14,7 @@ class Mover < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def self.search(search)
-    where("bio LIKE ?", "%#{search}%")
+    where("service_area LIKE ?", "%#{search}%")
   end
 
 end

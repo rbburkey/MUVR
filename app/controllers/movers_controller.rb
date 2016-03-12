@@ -8,6 +8,9 @@ before_action :set_mover, only: [:profile]
     @mover = current_mover
     @reviews=Review.all
     @jobs = Job.where(area: current_mover.service_area)
+    @jobapps = Jobapp.where(mover_id: current_mover.id)
+    @job = Job.where(mover_id: current_mover.id)
+
   end
 
   def profile
@@ -24,7 +27,7 @@ def all_movers
   end
 end
 
-def search
+def organizers
   @movers = Mover.all
 end
 
@@ -39,7 +42,7 @@ private
   end
 
   def mover_params
-    params.require(:mover).permit(:avatar, :bio)
+    params.require(:mover).permit(:avatar, :service_area)
   end
 
 

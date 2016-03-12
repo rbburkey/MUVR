@@ -60,6 +60,7 @@ h3 {
   color: #000;
   font-weight: 500;
   font-size: 20px;
+  margin-top: 10px;
 }
 
 h4 {
@@ -101,6 +102,27 @@ p {
 
 .portaljobs {
   min-height: 300px;
+}
+
+.jobbox {
+  background-color: #eca937;
+  border: 1px solid #dedede;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.jobbox h3 {
+color: #fff;
+}
+
+.jobbox h4 {
+color: #fff;
 }
 
 .jobappwindow {
@@ -233,7 +255,7 @@ padding-bottom: 100px;
   box-sizing: border-box;
   text-align: center;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 10px;
   margin-left: 15px;
   margin-right: 15px;
   margin-top: 20px;
@@ -243,6 +265,7 @@ padding-bottom: 100px;
   max-width: 100%;
   height: auto;
   width: auto;
+  border-radius: 10px;
 }
 
 .image {
@@ -254,31 +277,21 @@ padding-bottom: 100px;
 }
 
 
-.imagemovers {
-  width: 300px;
-  height: 250px;
-  padding: 10px;
-  overflow: hidden;
-  vertical-align: top;
-}
-
-.imagemovers img {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-
 .avatar {
+  border-radius: 10px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 2px 2px 8px #B1B1B1;
+  border-width: 4px;
   width: 300px;
   height: 300px;
-  padding: 10px;
   overflow: hidden;
   vertical-align: top;
 }
 
 .avatar img {
   min-height: 100%;
-  width: auto;
+  min-width: 100%;
 }
 
 .orange_button a {
@@ -296,6 +309,17 @@ padding-bottom: 100px;
 
 .profile {
   height: auto;
+  background-color: #fff;
+}
+
+.orange_back {
+  height: auto;
+  background-color: #eca937;
+}
+
+
+.heightbox {
+height: 570px;
 }
 
 
@@ -309,14 +333,14 @@ padding-bottom: 100px;
 
 /* ## NAVBAR CUSTOMISATIONS ## */
 
-ul.nav  a:hover { color: #fc9f00  !important; }
+ul.nav  a:hover { color: #eca937  !important; }
 
 ul.nav  a {
   color: #dadada  !important;
   font-size: 14px;
 }
 
-.navbar-brand { color: #fc9f00  !important; }
+.navbar-brand { color: #eca937  !important; }
 
 .navbar {
   margin-bottom: 0px;

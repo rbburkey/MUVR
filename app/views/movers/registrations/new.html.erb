@@ -46,6 +46,8 @@
 
     <div class="col-md-4">
       <div class="log-in panel">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <div class="panel-heading">
 
           <div class="field">
@@ -54,7 +56,12 @@
           </div>
 
           <div class="field">
-            <p class="moverform">IMPORTANT! Add skills like, organizing, lifting, cleaning, unpacking etc... to improve your searchability<p>
+            <p class="moverform">Would you like sign up as an organizer also?<p>
+            <%= f.label :organizer %>
+            <%= f.check_box :organizer %>
+          </div>
+
+          <div class="field">
               <%= f.text_area :bio, class: "form-control", placeholder: "Add skills and bio" %>
             </div>
 
