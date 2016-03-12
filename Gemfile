@@ -8,6 +8,7 @@ gem 'devise'
 gem 'paperclip', '~> 4.2'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'stripe'
 
 
 
