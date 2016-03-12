@@ -16,6 +16,7 @@ class ConversationsController < ApplicationController
     flash[:success] = 'Reply sent'
     redirect_to conversation_path(@conversation)
   end
+
   
   def get_mailbox
     @mailbox ||= current_user.mailbox
