@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
 
 
 

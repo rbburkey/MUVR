@@ -14,7 +14,6 @@ class ConversationsController < ApplicationController
   def get_mailbox
     @mailbox ||= current_user.mailbox
   end
-end
 
 
   def get_conversation
