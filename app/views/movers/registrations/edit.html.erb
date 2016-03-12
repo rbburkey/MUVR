@@ -23,6 +23,15 @@
             <%= f.email_field :email, autofocus: true, class: "form-control" %>
           </div>
 
+          <div class="form-group">
+            <%= f.text_field :service_area, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <p class="moverform">IMPORTANT! Add skills like, organizing, lifting, cleaning, unpacking etc... to improve your searchability<p>
+              <%= f.text_area :bio, class: "form-control", placeholder: "Add skills and bio" %>
+            </div>
+
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>

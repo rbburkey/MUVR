@@ -1,73 +1,83 @@
 <div class="registration-bg">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-md-offset-4">
+      <div class="col-md-4 col-sm-offset-2">
         <div class="log-in panel">
           <div class="panel-heading">
-          <h2>Movr Sign Up</h2>
-
-          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+            <h2>Movr Sign Up</h2>
 
 
-          <div class="field">
-            <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+
+            <div class="field">
+              <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+            </div>
+
+            <div class="field">
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+            </div>
+
+            <div class="field">
+              <%= f.text_field :user_name, class: "form-control", placeholder: "Username" %>
+            </div>
+
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :truck_available %>
+              <%= f.check_box :truck_available%>
+            </div>
+
+            <div class="field">
+              <%= f.text_field :service_area, class: "form-control", placeholder: "Area you rather work" %>
+            </div>
+
+            <div class="field">
+              <%= f.text_field :drivers_license, class: "form-control", placeholder: "Driver's License Number" %>
+            </div>
+
           </div>
+        </div>
+      </div>
+
+    <div class="col-md-4">
+      <div class="log-in panel">
+        <div class="panel-heading">
 
           <div class="field">
-            <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
-          </div>
-
-          <div class="field">
-            <%= f.text_field :user_name, class: "form-control", placeholder: "Username" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :avatar %><br>
+            <p class="moverform">Profile Picture</p>
             <%= f.file_field :avatar %>
           </div>
 
-
           <div class="field">
-            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "email" %>
-          </div>
+            <p class="moverform">IMPORTANT! Add skills like, organizing, lifting, cleaning, unpacking etc... to improve your searchability<p>
+              <%= f.text_area :bio, class: "form-control", placeholder: "Add skills and bio" %>
+            </div>
 
-          <div class="field">
-            <%= f.text_area :bio, class: "form-control", placeholder: "Tell us a bit about yourself" %>
-          </div>
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
 
-          <div class="field">
-            <%= f.label :truck_available %>
-            <%= f.check_box :truck_available%>
-          </div>
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
 
-          <div class="field">
-            <%= f.text_field :drivers_license, class: "form-control", placeholder: "Driver's License Number" %>
+            <div class="actions">
+              <%= f.button "Sign up", class: 'btn-lg btn-warning btn-block' %>
+            </div>
+            <% end %>
           </div>
-
-          <div class="field">
-            <%= f.text_field :service_area, class: "form-control", placeholder: "Area you rather work" %>
+        </div>
           </div>
-
-          <div class="field">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>
-
-          <div class="actions">
-            <%= f.button "Sign up", class: 'btn-lg btn-warning btn-block' %>
-          </div>
-          <% end %>
         </div>
       </div>
     </div>
-  </div>
-</div>

@@ -1,6 +1,6 @@
 class MoversController < ApplicationController
-
 before_action :set_mover, only: [:profile]
+
 
 
   def portal
@@ -17,11 +17,21 @@ before_action :set_mover, only: [:profile]
 
 def all_movers
   @movers = Mover.all
+  if params[:search]
+ @movers = Mover.search(params[:search])
+  else
+    @movers = Mover.all
+  end
+end
+
+def search
+  @movers = Mover.all
 end
 
 def mover_apps
   @jobapps = Jobapp.where(mover_id: current_mover.id)
 end
+
 
 private
   def set_mover
@@ -29,7 +39,7 @@ private
   end
 
   def mover_params
-    params.require(:mover).permit(:avatar)
+    params.require(:mover).permit(:avatar, :bio)
   end
 
 

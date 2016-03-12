@@ -88,6 +88,17 @@ p {
   line-height: normal;
 }
 
+.search{
+  padding: 25px;
+}
+
+.field p {
+  color: #ed822a;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+
 .portaljobs {
   min-height: 300px;
 }
