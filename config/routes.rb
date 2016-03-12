@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :jobapps, shallow: true
   end
-
+resources :messages, only: [:new, :create]
 # for messaging
   resources :conversations, only: [:index, :show, :destroy]
 
