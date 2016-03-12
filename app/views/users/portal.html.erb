@@ -45,6 +45,12 @@
       <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
       <%= link_to "Manage", job_path(jobs), class: "btn btn-primary"%>
       <% if jobs.jobapps.exists? %>
+         <% @jobapps.each do|ja| %>
+            <% unless !ja.accepted %>
+              <%= link_to "See Muvr's Profile", mover_prof_path(ja) , class: "btn btn-success" %>
+            <% end %>
+            <% end %>
+      <%elsif%>
       <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %></div>
       <% else %>
       <h5><i class="fa fa-file-text fa-lg"></i> No current applications</h5>
