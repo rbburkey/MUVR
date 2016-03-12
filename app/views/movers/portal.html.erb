@@ -9,18 +9,6 @@
 
    <div class="col-md-4 text-center">
 
-     <% @jobapps.each do |movers_app| %>
-     <%if movers_app.accepted %>
-     <h2>Current Jobs</h2>
-     <%="#{movers_app.user.first_name}" + " has hired you for moving help!"%>
-     <%elsif !movers_app.not_accepted?  && !movers_app.accepted %>
-     <h2>Pending Job Applications</h2>
-     <p><%="Your application for " + " #{movers_app.user.first_name}'s"%><br>
-     job is still pending</p>
-     <%else%>
-     <h3>Jobs Completed</h3>
-     <% end %>
-     <% end %>
 
       <div><%= link_to "Browse All Jobs", jobs_path, class: "btn btn-success btn-lg"%></div>
       <br>
