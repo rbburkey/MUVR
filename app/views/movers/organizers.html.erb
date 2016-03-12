@@ -1,0 +1,26 @@
+
+<div class="orange_back jumbotron">
+  <div class="container">
+    <div class="jobappwindow">
+      <h1>MUVR Organizers</h1>
+      <p>Ok, you got the moving covered but what about organizing your stuff? Need extended help? <br> These MUVRS will help you unpack and organize your stuff after the moving is done!<p>
+
+
+
+      <% @movers.each do |mover| %>
+
+      <% if mover.organizer == true %>
+      <div class=".col-md-4">
+        <div class="column">
+          <div class="avatar"><%= image_tag mover.avatar.url(:medium) %></div>
+          <h3><%= "#{mover.first_name}" + " #{mover.last_name}" +" in" " #{mover.service_area}" %></h3>
+          <p><%= link_to "See Profile", mover_prof_path(mover), class: 'btn btn-success' %></p>
+        </div>
+      </div>
+      <%end%>
+      <%end%>
+
+
+
+    </div>
+  </div>
