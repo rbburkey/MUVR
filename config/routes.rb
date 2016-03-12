@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   end
 resources :messages, only: [:new, :create]
 # for messaging
-  resources :conversations, only: [:index, :show, :destroy]
+resources :conversations, only: [:index, :show, :destroy] do
+  member do
+    post :reply
+  end
+end
 
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
