@@ -1,5 +1,5 @@
-<div class="jumbotron">
- <div class="profile container">
+<div class="profile jumbotron">
+ <div class="container">
    <h1 class="headline"><%= "#{@mover.first_name}'s" + " Portal"%></h1>
 
    <div class="col-md-4 text-center">
@@ -9,9 +9,8 @@
 
    <div class="col-md-4 text-center">
 
+
       <div><%= link_to "Browse All Jobs", jobs_path, class: "btn btn-success btn-lg"%></div>
-      <br>
-      <div><%= link_to "Open Jobs Map", jobs_map_path, class: "btn btn-success btn-lg"%></div>
       <br>
       <h2>Edit Your Account</h2>
       <div><%= link_to "Account Settings", edit_mover_registration_path, class: 'btn btn-warning btn-lg'%>
@@ -33,14 +32,14 @@
  </div>
 
 
-<div class="profile container">
+<div class="container">
   <div class="portaljobs">
  <h1>Jobs in your area</h1>
  <% if @jobs.present?%>
 
  <% @jobs.each do |job| %>
  <div class=".col-md-4">
-   <div class="column">
+   <div class="jobbox">
      <h4><%= "#{job.name}"%></h4>
      <h3><%= "Located in: " + "#{job.area}"%></h3>
      <div class="image"><%= image_tag job.image.url(:medium) %></div>

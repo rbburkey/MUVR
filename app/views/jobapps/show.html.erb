@@ -1,22 +1,31 @@
 <div class="jumbotron">
   <div class="container">
     <div class="jobappwindow">
-      <h1>Your application</h1>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <p id="notice"><%= notice %></p>
 
 
           <p>
-            <strong>Message:</strong>
-            <%= @jobapp.message %>
+            <% @jobapp.each do |j| %>
+            <h3>Contact your MUVR now!</h3></br>
+            <table align="center">
+              <tr>
+                  <th>Name:</th>
+                  <td><%=j.mover.first_name %></td>
+                </tr>
+                  <th>Email:</th>
+                  <td><%=j.mover.email %></td>
+                </tr>
+                <tr>
+                  <th>Phone Number:</th>
+                </tr>
+              </tr>
+              </table>
           </p>
-          <p><%= link_to "Edit", edit_jobapp_path(@jobapp), class: 'btn btn-success' %></p>
 
+          <p><%= link_to "See Their Profile", mover_prof_path(j.mover), class: 'btn btn-success' %></p>
+         <%end%>
         </div>
-
-      </div>
-
       </div>
     </div>
   </div>

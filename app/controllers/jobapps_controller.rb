@@ -22,8 +22,8 @@ class JobappsController < ApplicationController
   # GET /jobapps/1
   # GET /jobapps/1.json
   def show
-
-  end
+@jobapp = Jobapp.where(:accepted => true)
+end
 
   # GET /jobapps/new
   def new
@@ -52,7 +52,7 @@ class JobappsController < ApplicationController
 
     respond_to do |format|
       if @jobapp.save
-        format.html { redirect_to @jobapp , notice: 'Jobapp was successfully created.' }
+        format.html { redirect_to movers_portal_path , notice: 'Jobapp was successfully created.' }
         format.json { render :show, status: :created, location: @jobapp }
       else
         format.html { render :new }
@@ -96,6 +96,6 @@ class JobappsController < ApplicationController
 end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
-      params.require(:jobapp).permit(:message, :accepted, :not_accepted)
+      params.require(:jobapp).permit(:message, :accepted, :not_accepted, :job_id)
     end
 end

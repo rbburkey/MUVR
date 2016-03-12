@@ -13,6 +13,7 @@
         <li><%= link_to "Profile", user_prof_path(current_user) %></li>
         <li><%= link_to 'Your Conversations', conversations_path %></li>
         <li><%= link_to "Find a Mover", all_movers_path  %></li>
+        <li><%= link_to "Organizers", organizers_path  %></li>
 
       </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -27,6 +28,7 @@
         <li><%= link_to "Find a Client", all_users_path  %></li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Applications", movers_mover_apps_path %>
           <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
           <li><%= link_to "Sign Up User", new_user_registration_path %></li>
         </ul>

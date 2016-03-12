@@ -1,11 +1,31 @@
 <div class="jumbotron">
   <div class="container">
     <h1>All Movers</h1>
+    <p>Use the search bar to find MUVRS in your area<p>
+
+
+    <div class="row search">
+  <div class="col-sm-4 col-sm-offset-4">
+    <form>
+            <div class="input-group">
+              <%= form_tag(all_movers_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search by City",class: "form-control" %>
+                <div class="input-group-btn">
+                  <%= submit_tag "Search", class: 'btn btn-success'%>
+                  <% end %>
+                </div>
+            </div>
+    </form>
+  </div>
+</div>
+
+
+
     <% @movers.each do |mover| %>
     <div class=".col-md-4">
       <div class="column">
-        <h4><%= "#{mover.first_name}" + " #{mover.last_name}"%></h4>
         <div class="avatar"><%= image_tag mover.avatar.url(:medium) %></div>
+        <h4><%= "#{mover.first_name}" + " #{mover.last_name}"%></h4>
         <h3><%= "Is available in" + " #{mover.service_area}" %></h3>
         <p><%= link_to "See Profile", mover_prof_path(mover), class: 'btn btn-success' %></p>
       </div>

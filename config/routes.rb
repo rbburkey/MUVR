@@ -25,6 +25,8 @@ resources :messages, only: [:new, :create]
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
   get 'movers/:id' => 'movers#profile', :as  => "mover_prof"
   get 'all_movers' => "movers#all_movers"
+  get 'organizers' => "movers#organizers"
+
 
 
 
