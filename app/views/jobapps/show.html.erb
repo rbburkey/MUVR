@@ -11,8 +11,8 @@
             <strong>Message:</strong>
             <%= @jobapp.message %>
           </p>
-          <p><%= link_to "Edit", edit_jobapp_path(@jobapp), class: 'btn btn-success' %></p>
-
+          <p><%= link_to "Edit Your Message", edit_jobapp_path(@jobapp), class: 'btn btn-success' %></p>
+          <p><%= link_to "Back to Jobs", jobs_path(@jobapp), class: 'btn btn-success' %></p>
         </div>
 
       </div>
