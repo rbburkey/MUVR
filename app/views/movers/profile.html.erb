@@ -1,6 +1,6 @@
 
 <div class="jumbotron">
-  <div class="profile container">
+  <div class="heightbox container">
     <h1 class="headline"><%= "#{@mover.first_name}" + " #{@mover.last_name}'s" + " Profile"%></h1>
 
     <div class="col-md-4 text-center">
@@ -14,9 +14,10 @@
       <h3><%= "Is available in" + " #{@mover.service_area}" %></h3>
 
       <% if @mover.truck_available == true %>
-      <h3>I have a truck!<h3>
+      <i class="fa fa-truck fa-5x"></i>
+      <h3>Truck available!<h3>
         <% else %>
-        <h3>I don't have a truck<h3>
+        <h3>No truck available<h3>
           <%end%>
 
           <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
