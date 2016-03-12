@@ -12,7 +12,7 @@ before_action :set_mover, only: [:profile]
 
   #Returning any kind of identification you want for the model
   def name
-    return "You should add method :name in your Messageable model"
+    return "You should add method :first_name in your Messageable model"
   end
 
   #Returning the email address of the model if an email should be sent for this object (Message or Notification).
