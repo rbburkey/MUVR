@@ -19,18 +19,13 @@ border-width: 7px;'>
 </div>
 
 <script type="text/javascript">
-<<<<<<< HEAD
-history.go(1)
 handler = Gmaps.build('Google');
-=======
 var handler = Gmaps.build('Google');
->>>>>>> master
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 var  markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
-history.go(1)
 </script>
 <!-- <div>
   <input type="button" value="Reload Page" onClick="history.go(0)">
