@@ -23,7 +23,7 @@ before_action :set_mover, only: [:profile]
   def mailboxer_email(object)
     #Check if an email should be sent for that object
     #if true
-    return "define_email@on_your.model"
+    return "#{User.email}"
     #if false
     #return nil
   end

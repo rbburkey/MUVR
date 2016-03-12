@@ -2,6 +2,8 @@ class MessagesController < ApplicationController
   before_action :authenticate_user! || :authenticate_mover!
 
   def new
+    @user = User.find_by_username(params[:user])
+@message = current_user.messages.new
   end
 
   def create
