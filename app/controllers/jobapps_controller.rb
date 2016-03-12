@@ -52,7 +52,7 @@ end
 
     respond_to do |format|
       if @jobapp.save
-        format.html { redirect_to @jobapp , notice: 'Jobapp was successfully created.' }
+        format.html { redirect_to movers_portal_path , notice: 'Jobapp was successfully created.' }
         format.json { render :show, status: :created, location: @jobapp }
       else
         format.html { render :new }
