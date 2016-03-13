@@ -9,15 +9,14 @@ class ConversationsController < ApplicationController
 
     def show
     end
+
+    def reply
+      current_user.reply_to_conversation(@conversation, params[:body])
+      flash[:success] = 'Reply sent'
+      redirect_to conversation_path(@conversation)
+    end
+
   private
-
-  def reply
-    current_user.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = 'Reply sent'
-    redirect_to conversation_path(@conversation)
-  end
-
-  
   def get_mailbox
     @mailbox ||= current_user.mailbox
   end

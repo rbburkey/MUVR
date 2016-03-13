@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+validates :email, uniqueness: true         
   has_many :movers, through: :jobs
   has_many :jobs, through: :jobapps, dependent: :destroy
   has_many :reviews, dependent: :destroy
