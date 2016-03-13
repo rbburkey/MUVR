@@ -4,8 +4,17 @@ class ConversationsController < ApplicationController
   before_action :get_conversation, except: [:index]
   before_action :get_box, only: [:index]
 
+
   def index
-    @conversations = @mailbox.inbox.paginate(page: params[:page], per_page: 10)
+    if @box.eql? "inbox"
+      @conversations = @mailbox.inbox
+    elsif @box.eql? "sent"
+      @conversations = @mailbox.sentbox
+    else
+      @conversations = @mailbox.trash
+    end
+
+    @conversations = @conversations.paginate(page: params[:page], per_page: 10)
   end
 
     def show
@@ -30,7 +39,7 @@ class ConversationsController < ApplicationController
     @box = params[:box]
   end
 
-  
+
   def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
