@@ -11,60 +11,54 @@
     <div class="col-md-4 text-center">
       <h2><%= "#{@user.first_name}" + " Create a Job!"%></h2>
       <br>
-        <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
-        <br>
-        <p>Make changes to your account</p>
-        <br>
-        <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+      <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
+      <br>
+      <p>Make changes to your account</p>
+      <br>
+      <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-warning btn-lg'%></div>
     </div>
 
 
-      <div class="col-md-4 text-center">
-        <h2>Reviews You Posted</h2>
+    <div class="col-md-4 text-center">
+      <h2>Reviews You Posted</h2>
 
-        <%@reviews.each do |user_review|%>
-        <!-- want userz=false because we want reviews about users posted by this user -->
-        <%if user_review.user_id == current_user.id && !user_review.userz?%>
-        <p><%= user_review.body%><p>
+      <%@reviews.each do |user_review|%>
+      <!-- want userz=false because we want reviews about users posted by this user -->
+      <%if user_review.user_id == current_user.id && !user_review.userz?%>
+      <p><%= user_review.body%><p>
         <%end%>
         <%end%>
       </div>
 
     </div>
 
-<div class="container">
-  <div class="portaljobs">
-  <h1><%= "#{@user.first_name}'s" + " Jobs"%></h1>
-  <% if @jobs.present?%>
+    <div class="container">
+      <div class="portaljobs">
+        <h1><%= "#{@user.first_name}'s" + " Jobs"%></h1>
+        <% if @jobs.present?%>
 
-  <%@jobs.each do |jobs|%>
-  <div class=".col-md-4">
-    <div class="jobbox">
-      <h4><%= jobs.name %></h4>
-      <h3><%= "Located in: " + "#{jobs.area}"%></h3>
-      <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
-      <%= link_to "Manage", job_path(jobs), class: "btn btn-primary"%>
-      <% if jobs.jobapps.exists? %>
-         <% @jobapps.each do|ja| %>
-            <% unless !ja.accepted %>
-              <%= link_to "See Muvr's Profile", mover_prof_path(ja) , class: "btn btn-success" %>
+        <%@jobs.each do |jobs|%>
+        <div class=".col-md-4">
+          <div class="jobbox">
+            <h4><%= jobs.name %></h4>
+            <h3><%= "Located in: " + "#{jobs.area}"%></h3>
+            <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
+            <%= link_to "Manage", job_path(jobs), class: "btn btn-primary"%>
+            <% if jobs.jobapps.where(:accepted => true).exists? %>
+            <%= link_to "See Muvr's Profile", mover_prof_path(jobs) , class: "btn btn-success" %>
+            <% elsif jobs.jobapps.exists? %>
+            <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %>
+            <% else %>
+            <h5><i class="fa fa-file-text fa-lg"></i> No current applications</h5>
             <% end %>
+            </div>
             <% end %>
-      <%elsif%>
-      <%= link_to "View Applicants", users_user_apps_path(:job => jobs.id), class: "btn btn-success" %></div>
-      <% else %>
-      <h5><i class="fa fa-file-text fa-lg"></i> No current applications</h5>
-      <% end %>
+        </div>
+        <% else %>
+        <h3>Uh Oh... You don't have any jobs!</h3>
+        <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
+        <%end%>
+      </div>
     </div>
-    <% end %>
-
-    <% else %>
-    <h3>Uh Oh... You don't have any jobs!</h3>
-      <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
-    <% end %>
-
   </div>
-  </div>
-</div>
-</div>
 </div>

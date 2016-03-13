@@ -7,7 +7,9 @@ before_action :set_user, only: [:profile]
     @reviews=Review.all
     @movers=Mover.all
     @jobs = Job.where(user_id: current_user.id)
-    @jobapps = Jobapp.where(user_id: current_user.id)
+    @jobapp = Jobapp.where(:accepted => true)
+    # @jobapp = Jobapp.where(user_id: current_user)
+
   end
 
   def profile

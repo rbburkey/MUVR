@@ -2,39 +2,38 @@
 <div class="homepage container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <%= image_tag("movr.jpg", class: "first-slide") %>
+        <%= image_tag("box5.png", class: "first-slide") %>
         <div class="container">
-          <div class="carousel-caption">
+          <div class="carousel-caption" style="margin-bottom:250px">
             <h1>Welcome to MUVR!</h1>
-            <p>Note: If you're viewing this page via a and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-            <div style="text-align: center"><%= link_to "Sign Up Now!", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+            <div style="text-align: center; vertical-align: middle"><%= link_to "How it Works", howitworks_path, class: 'btn btn-warning btn-lg'%></div>
           </div>
         </div>
       </div>
-      <div class="item">
+      <!-- <div class="item">
         <%= image_tag("movr5.jpg", class: "first-slide") %>
         <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <div style="text-align: center"><%= link_to "Sign Up Now!", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+          <div class="carousel-caption" style="margin-bottom:150px">
+            <h1>Need help moving?</h1>
+            <p>Sign up to see Muvr's in your area today, and get the help you need!</p>
+            <div style="text-align: center"><%= link_to "Sign up", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
           </div>
         </div>
       </div>
       <div class="item">
         <%= image_tag("movers-il.jpg", class: "first-slide") %>
         <div class="container">
-          <div class="carousel-caption">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <div style="text-align: center"><%= link_to "Sign Up Now!", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+          <div class="carousel-caption" style="margin-bottom:150px">
+            <h1>Become a Muvr</h1>
+            <p>Sign up now and start making extra cash helping others move and organize!</p>
+              <div style="text-align: center"><%= link_to "Become a Muvr", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
           </div>
         </div>
       </div>
@@ -46,47 +45,46 @@
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a>
+    </a> -->
   </div><!-- /.carousel -->
 
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
-
+<!--
   <div class="container marketing">
     <div class="circles">
 
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="200" height="200">
-        <h4>A Heading</h4>
+        <h4>Be a Muvr.</h4>
         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
         <div><%= link_to "Something", root_path, class: 'btn btn-warning btn-lg'%></div>
       </div>
 
 
-      <!-- /.col-lg-4 -->
 
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="200" height="200">
-          <h4>A Heading</h4>
+          <h4>Need some help?</h4>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <div><%= link_to "Something", root_path, class: 'btn btn-warning btn-lg'%></div>
         </div>
 
 
-      <!-- /.col-lg-4 -->
+
 
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="200" height="200">
-          <h4>A Heading</h4>
+          <h4>Be an Organizer/Designer.</h4>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <div><%= link_to "Something", root_path, class: 'btn btn-warning btn-lg'%></div>
         </div>
-    </div><!-- /.circles -->
-
+    </div>
+-->
 
 
     <!-- START THE FEATURETTES -->
@@ -95,11 +93,21 @@
 
     <div class="row featurette">
       <div class="col-md-7 col-md-push-5">
-        <h2 class="featurette-heading">Oh yeah, it's that good</h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">Need help moving?</h2>
+        <p class="lead" style="margin-right: 20px;">MUVR is here for ALL of your in-between moving needs.  Whether it be moving out of your house, or just moving around living room furniture.  Hire a Muvr today!  </p>
+          <div style="text-align: center"><%= link_to "Sign up", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
       </div>
       <div class="col-md-5 col-md-pull-7">
-        <%= image_tag("temp.png", class: "featurette-image img-responsive center-block") %>
+        <div style='height: 528px;
+          width: 510px;
+          border-radius: 16px 16px;
+          border-color: #fff;
+          border-style: solid;
+          box-shadow: 2px 2px 10px #B1B1B1;
+          border-width: 7px;
+          margin-left: 25px;'>
+        <%= image_tag("moving_out2.jpg", class: "featurette-image img-responsive center-block") %>
+      </div>
       </div>
     </div>
 
@@ -107,11 +115,21 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Oh yeah, it's that good</h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">Become a Muvr</h2>
+        <p class="lead" style="margin-left: 20px;">Signing up as a Muvr gives you the opportunity to make money on your time, no expertise necessary.. just a good attitude!</p>
+       <div style="text-align: center"><%= link_to "Start Now", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
       </div>
       <div class="col-md-5">
-        <%= image_tag("temp.png", class: "featurette-image img-responsive center-block") %>
+        <div style='height: 390px;
+          width: 510px;
+          border-radius: 16px 16px;
+          border-color: #fff;
+          border-style: solid;
+          box-shadow: 2px 2px 10px #B1B1B1;
+          border-width: 7px;
+          margin-left: 25px;'>
+        <%= image_tag("move_out.jpg", class: "featurette-image img-responsive center-block") %>
+      </div>
       </div>
     </div>
 
@@ -120,11 +138,20 @@
 
     <div class="row featurette">
       <div class="col-md-7 col-md-push-5">
-        <h2 class="featurette-heading">Oh yeah, it's that good</h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading" style= "margin-top: 50px;">Good with organizing or have an eye for design?</h2>
+        <p class="lead" style="margin-bottom: 100px; margin-right: 20px;">We know not everyone wants to move, and there's a lot of other parts to moving belongings around.  That's why we want you to be able to use your skills by specifying your skill when you sign up as a Muvr.  Build up a rapport with good reviews, and make yourself valuable on MUVR! </p>
       </div>
-      <div class="col-md-5 col-md-pull-7">
-        <%= image_tag("temp.png", class: "featurette-image img-responsive center-block") %>
+      <div class="col-md-5 col-md-pull-7" style="margin-bottom: 50px; border-radius: 16px 16px;">
+        <div style='height: 348px;
+          width: 520px;
+          border-radius: 16px 16px;
+          border-color: #fff;
+          border-style: solid;
+          box-shadow: 2px 2px 10px #B1B1B1;
+          border-width: 7px;
+          margin-left: 25px;'>
+        <%= image_tag("garage.jpg", class: "featurette-image img-responsive center-block") %>
+      </div>
       </div>
     </div>
 
