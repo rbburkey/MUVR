@@ -5,7 +5,7 @@ module MessagesHelper
     Mover.all.each do |mover|
       s << "<option value='#{mover.id}'>#{mover.user_name}</option>"
     end
-    elsif mover_signed_in?
+  else
       User.all.each do |user|
         s << "<option value='#{user.id}'>#{user.username}</option>"
     end
