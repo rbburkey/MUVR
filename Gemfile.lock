@@ -42,6 +42,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
+    calc (1.0.0)
     choice (0.2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -208,6 +209,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  calc
   coffee-rails (~> 4.1.0)
   devise
   geocoder
