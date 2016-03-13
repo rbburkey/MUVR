@@ -10,7 +10,11 @@ before_action :set_user, only: [:profile]
     @jobapp = Jobapp.where(:accepted => true)
     # @jobapp = Jobapp.where(user_id: current_user)
 
+
   end
+
+  #Returning any kind of identification you want for the model
+
 
   def profile
   @reviews=Review.all

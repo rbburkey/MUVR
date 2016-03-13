@@ -15,8 +15,15 @@ Rails.application.routes.draw do
 
   resources :jobs do
     resources :jobapps, shallow: true
-
   end
+resources :messages, only: [:new, :create]
+# for messaging
+resources :conversations, only: [:index, :show, :destroy] do
+  member do
+    post :reply
+  end
+end
+
 
   devise_for :movers, :controllers => { registrations: 'registrations' }
   get 'movers/portal' => 'movers#portal', :as => "movers_portal"
