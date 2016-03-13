@@ -28,7 +28,10 @@ class ConversationsController < ApplicationController
 
   private
   def get_mailbox
+    if user_signed_in?
     @mailbox ||= current_user.mailbox
+  else
+      @mailbox ||= current_mover.mailbox
   end
 
 
