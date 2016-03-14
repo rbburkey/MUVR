@@ -8,9 +8,17 @@ gem 'devise'
 gem 'paperclip', '~> 4.2'
 gem 'gmaps4rails'
 gem 'geocoder'
+<<<<<<< HEAD
 gem 'stripe'
 
 
+=======
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+>>>>>>> d3bcf50750f45cfcac999f58db1c9a632eaeffd2
 
 
 
@@ -39,7 +47,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-erd'
 
-
+gem 'mailboxer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

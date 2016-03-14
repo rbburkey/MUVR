@@ -1,7 +1,7 @@
 <div class="profile jumbotron">
   <div class="container">
     <h1><%= "#{@user.first_name}'s" + " Portal"%></h1>
-    <p>This is a template for a simple marketing or informational website. </p>
+    <p>Welcome to your portal! Here you can create jobs, manage your jobs, <br>see your reviews, edit your account and much more!</p>
     <br>
     <div class="col-md-4 text-center">
       <div class="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -13,7 +13,6 @@
       <br>
       <div style="text-align: center"><%= link_to "Create New Job", new_job_path, class: 'btn btn-success btn-lg'%></div>
       <br>
-      <p>Make changes to your account</p>
       <br>
       <div style="text-align: center"><%= link_to "Account Settings", edit_user_registration_path, class: 'btn btn-warning btn-lg'%></div>
     </div>
@@ -25,7 +24,7 @@
       <%@reviews.each do |user_review|%>
       <!-- want userz=false because we want reviews about users posted by this user -->
       <%if user_review.user_id == current_user.id && !user_review.userz?%>
-      <p><%= user_review.body%><p>
+      <p><i class="fa fa-comments fa-lg"></i> <%= user_review.body%><p>
         <%end%>
         <%end%>
       </div>
