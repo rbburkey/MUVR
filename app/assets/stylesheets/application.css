@@ -40,6 +40,7 @@ margin-top: 100px;
 }
 
 #banner {
+  font-size: 60px;
   text-shadow: 2px 2px 10px black;
 }
 
@@ -186,12 +187,29 @@ p {
 
 #inbox-btn  a:hover {
   background-color: #ec971f;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #FFF;
+}
+
+#inbox-btn  a {
   color: #FFF;
 }
 
 /*.btn.btn-lg.btn-warning.active a:hover {
     background-color: #000;
 }*/
+
+.clearfix {
+  padding: 30px;
+}
+
+.align-left{
+text-align: left;
+}
+
+.sent {
+  padding: 20px 32px;
+}
 
 .search{
   padding: 25px;
@@ -446,14 +464,15 @@ height: 570px;
 ul.nav  a:hover { color: #eca937  !important; }
 
 ul.nav  a {
-  color: #dadada  !important;
+  color: #fff  !important;
   font-size: 14px;
 }
 
 .navbar-brand { color: #eca937  !important; }
 
 .navbar {
-  margin-bottom: 0px;
+  border-color: #000;
+  padding: 5px 20px;
   background-color: #000;
 }
 
