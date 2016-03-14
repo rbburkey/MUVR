@@ -13,7 +13,7 @@
       <% @conversation.receipts_for(current_user).each do |receipt| %>
         <% message = receipt.message %>
 
-        <%= message.sender.name %>
+      <strong>  <%= "#{message.sender.name}".capitalize + ":" %> </strong>
           says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
         <%= message.body %>
         <br>
@@ -22,7 +22,7 @@
     <% @conversation.receipts_for(current_mover).each do |receipt| %>
       <% message = receipt.message %>
 
-      <%= message.sender.name %>
+      <strong>  <%= "#{message.sender.name}".capitalize + ":" %> </strong>
         says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
       <%= message.body %>
       <br>
@@ -38,7 +38,5 @@
   <%= submit_tag "Send Message", class: 'btn btn-primary' %>
 <% end %>
 </div>
-<<<<<<< HEAD
-=======
+
 </div>
->>>>>>> 2f96766633815e33c6dbe0b666f71c086cdf1bc0
