@@ -102,7 +102,6 @@ margin-top: 100px;
 
 .col-lg-12 {
   margin-bottom: 50px;
-
 }
 
 body {
@@ -169,6 +168,31 @@ p {
   line-height: normal;
 }
 
+.nav-stacked {
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.nav-stacked a {
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#inbox-btn  a:hover {
+  background-color: #ec971f;
+  color: #FFF;
+}
+
+/*.btn.btn-lg.btn-warning.active a:hover {
+    background-color: #000;
+}*/
+
 .search{
   padding: 25px;
 }
@@ -183,6 +207,7 @@ p {
 .portaljobs {
   min-height: 300px;
 }
+
 
 .jobbox {
   background-color: #eca937;
@@ -212,6 +237,7 @@ color: #fff;
 
 .jumbotron {
   margin: 0px;
+  padding-top: 100px;
 }
 
 
