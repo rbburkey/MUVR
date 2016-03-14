@@ -20,6 +20,7 @@
                <%if user_signed_in?%>
                <li><%= link_to "Portal", users_portal_path %></li>
                <li><%= link_to "Profile", user_prof_path(current_user) %></li>
+               <li><%= link_to 'Your Conversations', conversations_path %></li>
                <li><%= link_to "Find a Mover", all_movers_path  %></li>
                <li><%= link_to "Organizers", organizers_path  %></li>
              </ul>
