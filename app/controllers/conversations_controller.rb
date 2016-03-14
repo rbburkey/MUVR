@@ -36,7 +36,7 @@ class ConversationsController < ApplicationController
       @conversation.move_to_trash(current_mover)
       flash[:success] = 'The conversation was moved to trash.'
       redirect_to conversations_path
-
+end
     end
 
     def restore
@@ -49,6 +49,7 @@ class ConversationsController < ApplicationController
       flash[:success] = 'The conversation was restored.'
       redirect_to conversations_path
     end
+end
 
   def empty_trash
     if user_signed_in?
