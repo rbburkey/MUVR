@@ -13,6 +13,8 @@
 *= require_tree .
 *= require_self
 */
+@import 'chosen';
+
 html {
   height: 100%;
 }
@@ -495,4 +497,10 @@ ul.nav  a {
   font-weight: 300;
   font-size: 20px;
   color: #FFF;
+}
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }

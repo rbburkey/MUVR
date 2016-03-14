@@ -13,6 +13,8 @@ before_action :set_mover, only: [:profile]
 
   end
 
+
+
   def profile
     @reviews=Review.all
   end
