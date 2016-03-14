@@ -33,6 +33,7 @@ class ConversationsController < ApplicationController
   else
       @mailbox ||= current_mover.mailbox
   end
+end
 
 
   def get_box
