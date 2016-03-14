@@ -1,4 +1,9 @@
-
+<div class="wrap">
+  <div class="loading">
+    <div class="bounceball"></div>
+    <div class="text">NOW LOADING</div>
+  </div>
+</div>
 <div class="homepage container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -15,7 +20,7 @@
 
             <h1 id="banner">Welcome to MUVR!</h1>
 
-            <div style="text-align: center; vertical-align: middle"><%= link_to "How it Works", howitworks_path, class: 'btn btn-warning btn-lg'%></div>
+            <div style="text-align: center; vertical-align: middle;"><%= link_to "How it Works", howitworks_path, class: 'btn btn-warning rob-btn-lg'%></div>
 
           </div>
         </div>
@@ -99,7 +104,7 @@
       <div class="col-md-7 col-md-push-5">
         <h2 class="featurette-heading">Need help moving?</h2>
         <p class="lead" style="margin-right: 20px;">MUVR is here for ALL of your in-between moving needs.  Whether it be moving out of your house, or just moving around living room furniture.  Hire a Muvr today!  </p>
-          <div style="text-align: center"><%= link_to "Sign up", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+          <div style="text-align: center"><%= link_to "Sign up", new_user_registration_path, class: 'btn btn-warning btn-lg'%></div>
       </div>
       <div class="col-md-5 col-md-pull-7">
         <div style='height: 528px;
@@ -121,7 +126,7 @@
       <div class="col-md-7">
         <h2 class="featurette-heading">Become a Muvr</h2>
         <p class="lead" style="margin-left: 20px;">Signing up as a Muvr gives you the opportunity to make money on your time, no expertise necessary.. just a good attitude!</p>
-       <div style="text-align: center"><%= link_to "Start Now", user_registration_path, class: 'btn btn-warning btn-lg'%></div>
+       <div style="text-align: center"><%= link_to "Start Now", new_mover_registration_path, class: 'btn btn-warning btn-lg'%></div>
       </div>
       <div class="col-md-5">
         <div style='height: 390px;
