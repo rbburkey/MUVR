@@ -50,6 +50,21 @@ class ConversationsController < ApplicationController
       redirect_to conversations_path
     end
 
+    def empty_trash
+      if user_signed_in?
+      @mailbox.trash.each do |conversation|
+        conversation.receipts_for(current_user).update_all(deleted: true)
+      end
+      flash[:success] = 'Your trash was cleaned!'
+      redirect_to conversations_path
+    else
+      @mailbox.trash.each do |conversation|
+        conversation.receipts_for(current_mover).update_all(deleted: true)
+      end
+      flash[:success] = 'Your trash was cleaned!'
+      redirect_to conversations_path
+    end
+    end
 
   private
   def get_mailbox
