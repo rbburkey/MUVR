@@ -1,13 +1,26 @@
-<div class="container" style="margin-bottom: 200px;">
-<% @jobapps.each do |movers_app| %>
-<%if movers_app.accepted? && movers_app.not_accepted? %>
-<h3>Current Jobs</h3>
-<%="#{movers_app.user.first_name}" + " has hired you for moving help!"%>
-<%elsif !movers_app.accepted? && !movers_app.not_accepted? %>
-<h3>Pending Jobapps</h3>
-<%="Your application for " + " #{movers_app.user.first_name}" + "\'s" + " is still pending." %>
-<%else%>
-<h3>Closed Jobapps</h3>
-<% end %>
-<% end %>
+<div class="jumbotron">
+  <div class="container">
+    <div class="jobappwindow">
+      <h1><i class="fa fa-file-text fa-lg"></i>  Your applications</h1>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+          <% @jobapps.each do |movers_app| %>
+          <%if movers_app.accepted? && movers_app.not_accepted? %>
+          <h3>Hired!</h3>
+          <%="#{movers_app.user.first_name}" + " has hired you for moving help!"%>
+          <%elsif !movers_app.accepted? && !movers_app.not_accepted? %>
+          <h2>Current Status</h2>
+          <p><%="Your application for " + " #{movers_app.user.first_name}" + "\'s" + " is still pending." %></p>
+          <%else%>
+          <h3>Closed Jobs</h3>
+          <% end %>
+          <% end %>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
 </div>
