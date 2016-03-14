@@ -3,7 +3,7 @@ class Mover < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-validates :username, uniqueness: true
+validates :user_name, uniqueness: true
   has_many :jobs, through: :jobapps
   has_many :users, through: :jobs
   has_many :reviews

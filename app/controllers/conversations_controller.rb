@@ -1,8 +1,8 @@
 class ConversationsController < ApplicationController
-  before_action :authenticate_user! || :authenticate_mover!
   before_action :get_mailbox
   before_action :get_conversation, except: [:index]
   before_action :get_box, only: [:index]
+
 
 
   def index
@@ -21,9 +21,15 @@ class ConversationsController < ApplicationController
     end
 
     def reply
+      if user_signed_in?
       current_user.reply_to_conversation(@conversation, params[:body])
       flash[:success] = 'Reply sent'
       redirect_to conversation_path(@conversation)
+    else
+      current_mover.reply_to_conversation(@conversation, params[:body])
+      flash[:success] = 'Reply sent'
+      redirect_to conversation_path(@conversation)
+    end
     end
 
 
