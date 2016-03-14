@@ -21,9 +21,15 @@ class ConversationsController < ApplicationController
     end
 
     def reply
+      if user_signed_in?
       current_user.reply_to_conversation(@conversation, params[:body])
       flash[:success] = 'Reply sent'
       redirect_to conversation_path(@conversation)
+    else
+      current_mover.reply_to_conversation(@conversation, params[:body])
+      flash[:success] = 'Reply sent'
+      redirect_to conversation_path(@conversation)
+    end
     end
 
 
