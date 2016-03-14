@@ -1,8 +1,8 @@
 class ConversationsController < ApplicationController
-  before_action :authenticate_user! || :authenticate_mover!
   before_action :get_mailbox
   before_action :get_conversation, except: [:index]
   before_action :get_box, only: [:index]
+
 
 
   def index

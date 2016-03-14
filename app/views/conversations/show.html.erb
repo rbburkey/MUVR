@@ -5,6 +5,7 @@
 
   <div class="panel-body">
     <div class="messages">
+    <%  if user_signed_in? %>
       <% @conversation.receipts_for(current_user).each do |receipt| %>
         <% message = receipt.message %>
 
@@ -13,6 +14,15 @@
         <%= message.body %>
         <br>
       <% end %>
+    <%  else %>
+    <% @conversation.receipts_for(current_mover).each do |receipt| %>
+      <% message = receipt.message %>
+
+      <%= message.sender.name %>
+        says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+      <%= message.body %>
+      <%end%>
+      <%end%>
     </div>
   </div>
 </div>
