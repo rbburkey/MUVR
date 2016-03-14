@@ -25,7 +25,9 @@ resources :messages, only: [:new, :create]
       post :restore
       post :mark_as_read
     end
-
+    collection do
+      delete :empty_trash
+    end
   end
 
 
