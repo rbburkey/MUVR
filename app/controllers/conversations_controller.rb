@@ -26,6 +26,31 @@ class ConversationsController < ApplicationController
       redirect_to conversation_path(@conversation)
     end
 
+
+  def destroy
+    if user_signed_in?
+      @conversation.move_to_trash(current_user)
+      flash[:success] = 'The conversation was moved to trash.'
+      redirect_to conversations_path
+    else
+      @conversation.move_to_trash(current_mover)
+      flash[:success] = 'The conversation was moved to trash.'
+      redirect_to conversations_path
+
+    end
+
+    def restore
+      if user_signed_in?
+      @conversation.untrash(current_user)
+      flash[:success] = 'The conversation was restored.'
+      redirect_to conversations_path
+    else
+      @conversation.untrash(current_mover)
+      flash[:success] = 'The conversation was restored.'
+      redirect_to conversations_path
+    end
+
+
   private
   def get_mailbox
     if user_signed_in?
