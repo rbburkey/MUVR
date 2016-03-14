@@ -9,14 +9,15 @@
     </ol> -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <%= image_tag("box5.png", class: "first-slide") %>
+        <%= image_tag("moving-boxes.jpg", class: "first-slide") %>
         <div class="container">
           <div class="carousel-caption" style="margin-bottom:250px">
-            <h1>Welcome to MUVR!</h1>
+            <h1 id="banner">Welcome to MUVR!</h1>
             <div style="text-align: center; vertical-align: middle"><%= link_to "How it Works", howitworks_path, class: 'btn btn-warning btn-lg'%></div>
           </div>
         </div>
       </div>
+    </div>
       <!-- <div class="item">
         <%= image_tag("movr5.jpg", class: "first-slide") %>
         <div class="container">
@@ -46,7 +47,7 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a> -->
-  </div><!-- /.carousel -->
+  <!-- /.carousel -->
 
 
   <!-- Marketing messaging and featurettes
