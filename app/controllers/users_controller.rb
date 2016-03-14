@@ -18,6 +18,7 @@ before_action :set_user, only: [:profile]
 
   def profile
   @reviews=Review.all
+  @user = current_user
   end
 
   def index

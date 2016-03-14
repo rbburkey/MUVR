@@ -1,3 +1,4 @@
+<div class="container" id="start_conversation">
 <h1>Start Conversation </h1>
 
 <div class="panel panel-default">
@@ -21,6 +22,7 @@
       <%= message.sender.name %>
         says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
       <%= message.body %>
+      <br>
       <%end%>
       <%end%>
     </div>
@@ -32,3 +34,4 @@
   </div>
   <%= submit_tag "Send Message", class: 'btn btn-primary' %>
 <% end %>
+</div>

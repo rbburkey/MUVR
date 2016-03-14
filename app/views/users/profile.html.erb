@@ -11,9 +11,8 @@
     <div class="col-md-4 text-center">
       <h3><%= "Username: " + "#{@user.username}"%></h3>
 
-      <p><%="Send " + "#{@user.first_name}" + " an email at: " + "#{@user.email}" %></p>
 
-      <div><%= link_to "Ask a Question", root_path, class: 'btn btn-success btn-lg'%>
+      <div><%= link_to "Message #{@user.first_name}", new_message_path(@user), class: 'btn btn-success btn-lg'%>
       </div>
 
     </div>

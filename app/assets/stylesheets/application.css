@@ -23,6 +23,18 @@ nav a:visited {
   color: #FFF !important;
 }
 
+#start_conversation {
+  margin-top: 100px;
+}
+
+#conversations {
+margin-top: 100px;
+}
+
+#start_message {
+  margin-top: 100px;
+}
+
 #bs-example-navbar-collapse-1 {
   border-color: #fc9f00;
 }
