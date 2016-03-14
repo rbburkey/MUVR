@@ -31,11 +31,12 @@
                <%elsif mover_signed_in?%>
                <li><%= link_to "Portal", movers_portal_path %></li>
                <li><%= link_to "Profile", mover_prof_path(current_mover) %></li>
-               <li><%= link_to "See Jobs", jobs_path %></li>
-               <li><%= link_to "Find a Client", all_users_path  %></li>
+               <li><%= link_to "Find Jobs", jobs_path %></li>
+               <li><%= link_to "Find Clients", all_users_path  %></li>
+               <li><%= link_to "Job Applications", movers_mover_apps_path %></li>
+
              </ul>
                <ul class="nav navbar-nav navbar-right">
-                 <li><%= link_to "Applications", movers_mover_apps_path %>
                  <li><%= link_to "Log Out Mover", destroy_mover_session_path, method: :delete%></li>
                  <li><%= link_to "Sign Up User", new_user_registration_path %></li>
                </ul>
