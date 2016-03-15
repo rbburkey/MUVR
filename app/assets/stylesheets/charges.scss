@@ -1,0 +1,36 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.timer-container {
+    /* margin: 0 auto; */
+    margin-top: 95px;
+    text-align: center;
+
+}
+
+
+#time{
+text-decoration-color: red;
+}
+
+
+input {
+    line-height: normal;
+    border-bottom-style: groove;
+}
+
+article {
+  text-align: center;
+}
+
+.paypay {
+  text-align: center;
+
+}
+
+
+fieldset {
+  margin: 63px;
+    border: 0;
+    min-width: 13px;
+}

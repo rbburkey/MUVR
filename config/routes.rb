@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'movers/mover_apps'
   get 'users/user_apps'
   get 'movers/jobs_area'
+  resources :charges
 
   get '/jobs/map' => 'jobs#map'
 
@@ -46,7 +47,7 @@ resources :messages, only: [:new, :create]
   get 'all_users' => "users#all_users"
 
 
-
+  resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

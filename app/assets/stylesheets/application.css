@@ -49,15 +49,20 @@ margin-top: 100px;
 /*Profile Stuff*/
 
 #user_profile_container {
-  border: 2px solid;
+  /*border: 2px solid;
   padding-bottom: 30px;
   margin-bottom: 30px;
   background-color:rgb(247, 245, 240);
-  border-radius: 10px 10px;
+  border-radius: 10px 10px;*/
+
+}
+#time {
+  font-size: 36px;
 }
 
 #user_jobs_portal {
-  border: 2px solid;
+  margin-top: 30px;
+
   padding-bottom: 30px;
   margin-bottom: 30px;
   background-color:rgb(247, 245, 240);
@@ -70,21 +75,24 @@ margin-top: 100px;
 }
 
 #mover_portal {
-border: 2px solid;
-padding-bottom: 30px;
+/*border: 2px solid;
+padding-bottom: 30px;*/
 margin-bottom: 30px;
 background-color:rgb(247, 245, 240);
-border-radius: 10px 10px;
+/*border-radius: 10px 10px;*/
 }
 
 #mover_jobs {
-  border: 2px solid;
-  padding-bottom: 30px;
+  /*border: 2px solid;
+  padding-bottom: 30px;*/
   margin-bottom: 30px;
   background-color:rgb(247, 245, 240);
-  border-radius: 10px 10px;
+  /*border-radius: 10px 10px;*/
 }
 
+.profile.jumbotron {
+  background-color:rgb(247, 245, 240);
+}
 .msg-btn-lg {
   margin-top: 20px;
 }
@@ -324,6 +332,7 @@ color: #fff;
 .jumbotron {
   margin: 0px;
   padding-top: 100px;
+  background-color:rgb(247, 245, 240);
 }
 
 

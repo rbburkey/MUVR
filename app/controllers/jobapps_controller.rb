@@ -85,6 +85,8 @@ end
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_jobapp
@@ -93,7 +95,7 @@ end
 
     def job_load
       @job = Job.find(params[:job_id])
-end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobapp_params
       params.require(:jobapp).permit(:message, :accepted, :not_accepted, :job_id)

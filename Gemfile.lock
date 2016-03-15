@@ -49,6 +49,7 @@ GEM
       will_paginate
     builder (3.2.2)
     byebug (8.2.2)
+    calc (1.0.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -98,6 +99,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    domain_name (0.5.20160309)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -107,6 +110,8 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -140,6 +145,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
@@ -178,7 +184,6 @@ GEM
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (4.2.5.1)
-      
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
       rake (>= 0.8.7)
@@ -192,6 +197,10 @@ GEM
     ref (2.0.0)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     ruby-graphviz (1.2.2)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -211,6 +220,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (1.36.1)
+      rest-client (~> 1.4)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -229,6 +240,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -245,6 +259,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-will_paginate
   byebug
+  calc
   chosen-rails
   coffee-rails (~> 4.1.0)
   devise
@@ -262,6 +277,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
+  stripe
   therubyracer
   turbolinks
   twitter-bootstrap-rails
