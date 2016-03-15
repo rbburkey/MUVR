@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 before_action :set_user, only: [:profile]
 
   def portal
-
     @user = current_user
     @reviews=Review.all
     @movers=Mover.all
@@ -18,7 +17,6 @@ before_action :set_user, only: [:profile]
 
   def profile
   @reviews=Review.all
-  @user = current_user
   end
 
   def index

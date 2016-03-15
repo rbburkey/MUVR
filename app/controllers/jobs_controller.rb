@@ -19,7 +19,7 @@ class JobsController < ApplicationController
 def show
   # Gmaps.store.markers.filter(function(m) { return m.serviceObject.id == id; })[0]
   @job = Job.find(params[:id])
-@jobs = Job.where(user_id: current_user.id)
+#@jobs = Job.where(user_id: current_user.id)
   @hash = Gmaps4rails.build_markers([@job]) do |job, marker|
 marker.lat job.latitude
 marker.lng job.longitude
