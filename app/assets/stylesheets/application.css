@@ -18,7 +18,7 @@
 
 .rob-btn-lg {
   font-size: 24px;
-  box-shadow: 2px 2px 6px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 html {
@@ -39,6 +39,68 @@ margin-top: 100px;
 
 #start_message {
   margin-top: 100px;
+}
+
+#message_box {
+  margin-top: 20px;
+}
+
+
+/*Profile Stuff*/
+
+#user_profile_container {
+  border: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color:rgb(247, 245, 240);
+  border-radius: 10px 10px;
+}
+
+#user_jobs_portal {
+  border: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color:rgb(247, 245, 240);
+  border-radius: 10px 10px;
+}
+
+#user_profile {
+  border: 2px solid;
+  padding-bottom: 30px;
+}
+
+#mover_portal {
+border: 2px solid;
+padding-bottom: 30px;
+margin-bottom: 30px;
+background-color:rgb(247, 245, 240);
+border-radius: 10px 10px;
+}
+
+#mover_jobs {
+  border: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color:rgb(247, 245, 240);
+  border-radius: 10px 10px;
+}
+
+.msg-btn-lg {
+  margin-top: 20px;
+}
+
+#bio {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+
+.headline{
+  margin-bottom: 50px;
 }
 
 #bs-example-navbar-collapse-1 {

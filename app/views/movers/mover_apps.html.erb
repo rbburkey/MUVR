@@ -7,13 +7,12 @@
 
           <% @jobapps.each do |movers_app| %>
           <%if movers_app.accepted? && movers_app.not_accepted? %>
-          <h3>Hired!</h3>
-          <%="#{movers_app.user.first_name}" + " has hired you for moving help!"%>
+          <h2>Hired!</h2>
+          <p><%="#{movers_app.user.first_name.capitalize}" + " has hired you for moving help!"%></p>
           <%elsif !movers_app.accepted? && !movers_app.not_accepted? %>
-          <h2>Current Status</h2>
-          <p><%="Your application for " + " #{movers_app.user.first_name}" + "\'s" + " is still pending." %></p>
+          <h3>Current Status</h3>
+          <p><%="Your application for " + " #{movers_app.user.first_name.capitalize}" + "\'s" + " job is still pending." %></p>
           <%else%>
-          <h3>Closed Jobs</h3>
           <% end %>
           <% end %>
         </div>

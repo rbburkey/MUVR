@@ -1,7 +1,7 @@
-<div class="jumbotron">
+<div class="jumbotron" id="user_profile">
   <div class="heightbox container">
-    <h1><%= "#{@user.first_name}" + " #{@user.last_name}'s" + " Profile"%></h1>
-    <h2 class="subheadline">Client Information</h2>
+    <h1><%= "#{@user.first_name.capitalize}" + " #{@user.last_name.capitalize}'s" + " Profile"%></h1>
+    <h2 class="subheadline"></h2>
 
     <div class="col-md-4 text-center">
       <div class="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -9,10 +9,10 @@
 
 
     <div class="col-md-4 text-center">
-      <h3><%= "Username: " + "#{@user.username}"%></h3>
+      <h3><%= "Username: " + "#{@user.username.capitalize}"%></h3>
 
 
-      <div><%= link_to "Message #{@user.first_name}", new_message_path(@user), class: 'btn btn-success btn-lg'%>
+      <div><%= link_to "Message #{@user.first_name.capitalize}", new_message_path(@user), class: 'btn btn-success btn-lg'%>
       </div>
 
     </div>
@@ -32,7 +32,7 @@
       <div style="text-center">
         <br>
         <br>
-        <h2><%= "#{@user.first_name}'s" + " Reviews" %></h2>
+        <h2><%= "#{@user.first_name.capitalize}'s" + " Reviews" %></h2>
         <%@reviews.each do |user_review|%>
         <!-- want userz=true because we want reviews about users  -->
         <%if user_review.user_id == @user.id && user_review.userz?%>

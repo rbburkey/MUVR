@@ -1,7 +1,7 @@
-<div class="profile jumbotron">
- <div class="container">
-   <h1 class="headline"><%= "#{@mover.first_name}'s" + " Portal"%></h1>
-     <p>Welcome to your portal! Here you can find jobs in your area, manage your jobs, <br>see your reviews, edit your account and much more!</p>
+<div class="profile jumbotron" >
+ <div class="container" id="mover_portal">
+   <h1 class="headline"><%= "Your Portal"%></h1>
+     <p>Welcome to your portal! Here you can find and manage jobs in your area, <br>see your reviews, edit your account and much more!</p>
 
    <div class="col-md-4 text-center">
      <div class="avatar"><%= image_tag @mover.avatar.url(:medium) %></div>
@@ -10,7 +10,8 @@
 
    <div class="col-md-4 text-center">
 
-
+      <br>
+      <br>
       <div><%= link_to "Browse All Jobs", jobs_path, class: "btn btn-success btn-lg"%></div>
       <br>
       <h2>Edit Your Account</h2>
@@ -33,7 +34,7 @@
  </div>
 
 
-<div class="container">
+<div class="container" id="mover_jobs">
   <div class="portaljobs">
  <h1>Jobs in your area</h1>
  <% if @jobs.present?%>
