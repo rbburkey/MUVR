@@ -44,6 +44,7 @@
             <h4><%= jobs.name %></h4>
             <h3><%= "Located in: " + "#{jobs.area}"%></h3>
             <div class="image"><%= image_tag jobs.image.url(:medium) %></div>
+            <br>
             <%= link_to "Manage", job_path(jobs), class: "btn btn-primary"%>
             <% if jobs.jobapps.where(:accepted => true).exists? %>
             <%= link_to "See Muvr's Profile", mover_prof_path(jobs) , class: "btn btn-success" %>

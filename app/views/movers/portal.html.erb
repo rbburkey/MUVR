@@ -45,6 +45,7 @@
      <h4><%= "#{job.name}"%></h4>
      <h3><%= "Located in: " + "#{job.area}"%></h3>
      <div class="image"><%= image_tag job.image.url(:medium) %></div>
+     <br>
      <%= link_to "See Details", job_path(job), class: "btn btn-primary"%>
    </div>
    <% end %>

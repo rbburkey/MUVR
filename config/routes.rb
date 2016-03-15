@@ -39,8 +39,6 @@ resources :messages, only: [:new, :create]
   get 'organizers' => "movers#organizers"
 
 
-
-
   devise_for :users, :controllers => { registrations: "user/registrations" }
   get '/users/portal' => 'users#portal', :as => "users_portal"
   get '/users/:id' => 'users#profile', :as  => "user_prof"
