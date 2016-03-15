@@ -1,5 +1,7 @@
 
-	<div>Time: <span id="time"></span></div>
+
+<div class="timer-container">
+	<div class="charge-button">Time: <span id="time"></span></div>
 	<input type="button" value="start" id="start-timer">
 	<input type="button" value="stop" id="stop-timer">
 	<input type="button" value="reset" id="reset-timer">
@@ -25,7 +27,7 @@
                 <option value="None">Select conditions</option>
                 <option value="Intercounty">Intercounty($20)</option>
                 <option value="Interstate">Interstate($100)</option>
-
+								<br/>
                </select>
                 <br/>
                 <p>
@@ -41,11 +43,13 @@
 
 
        </form>
-	</div><!--End of wrap-->
+	</div>
+</div>
+</div>
 
 
 
-
+<div class="paypay">
 
 <%= form_tag charges_path do %>
   <article>
@@ -61,12 +65,11 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"
+          data-amount="5000"
           data-locale="auto"></script>
 <% end %>
 
-
-
+</div>
 
 
 
