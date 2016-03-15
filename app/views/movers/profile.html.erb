@@ -21,15 +21,15 @@
           <%end%>
 
           <h3><%= "#{@mover.first_name}'s" + " Bio"%></h3>
-
           <p><%= @mover.bio %></p>
-
+          <div><%= link_to "Message #{@mover.first_name}", new_message_path(@mover), class: 'btn btn-success btn-lg'%></div>
         </div>
 
 
         <div class="col-md-4 text-center">
           <div class="comment-form">
             <h2>Add Your Review</h2>
+            
               <%= form_for [@mover.reviews.new] do |f| %>
               <%= f.hidden_field :mover_id %><br>
               <div class="col-md-8"><%= f.text_field :body, class: "form-control", placeholder: 'Add a comment...' %></div>

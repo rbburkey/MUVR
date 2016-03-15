@@ -10,6 +10,12 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'stripe'
 gem 'calc'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
@@ -36,7 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-erd'
 
-
+gem 'mailboxer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

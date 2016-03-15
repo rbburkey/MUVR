@@ -13,6 +13,8 @@
 *= require_tree .
 *= require_self
 */
+@import 'chosen';
+
 html {
   height: 100%;
 }
@@ -21,13 +23,91 @@ nav a:visited {
   color: #FFF !important;
 }
 
+#start_conversation {
+  margin-top: 100px;
+}
+
+#conversations {
+margin-top: 100px;
+}
+
+#start_message {
+  margin-top: 100px;
+}
+
+#bs-example-navbar-collapse-1 {
+  border-color: #fc9f00;
+}
+
+#banner {
+  font-size: 60px;
+  text-shadow: 2px 2px 10px black;
+}
+
+#services {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+#how_it_works {
+  font-size: 36px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid;
+  border-color: black;
+  font-weight: 300;
+  text-shadow: 2px 2px 10px #B1B1B1;
+  margin-top: 30px;
+}
+#slogan {
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+#Thewhy {
+  margin-bottom: 150px;
+
+
+}
+
+#whyus {
+  margin-top: 40px;
+  align-items: center;
+
+}
+
+#whyus.section-heading {
+  font-weight: 300;
+  text-shadow: 2px 2px 10px #B1B1B1;
+
+}
+
+#p_row.row {
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-color: black;
+  margin-top: 0px;
+  background-color:rgb(237, 234, 223);
+  box-shadow: 4px 4px 14px #B1B1B1;
+
+}
+
+.section-paragraph {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
 .navbar-static-top .container-fluid {
   padding: 0 5%;
 }
 
+.col-lg-12 {
+  margin-bottom: 50px;
+}
 
 body {
-  height: 100%
+  height: 100%;
+  background-color:rgb(247, 245, 240);
 }
 
 h1 {
@@ -89,6 +169,48 @@ p {
   line-height: normal;
 }
 
+.nav-stacked {
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.nav-stacked a {
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#inbox-btn  a:hover {
+  background-color: #ec971f;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #FFF;
+}
+
+#inbox-btn  a {
+  color: #FFF;
+}
+
+/*.btn.btn-lg.btn-warning.active a:hover {
+    background-color: #000;
+}*/
+
+.clearfix {
+  padding: 30px;
+}
+
+.align-left{
+text-align: left;
+}
+
+.sent {
+  padding: 20px 32px;
+}
+
 .search{
   padding: 25px;
 }
@@ -103,6 +225,7 @@ p {
 .portaljobs {
   min-height: 300px;
 }
+
 
 .jobbox {
   background-color: #eca937;
@@ -132,6 +255,7 @@ color: #fff;
 
 .jumbotron {
   margin: 0px;
+  padding-top: 100px;
 }
 
 
@@ -340,14 +464,15 @@ height: 570px;
 ul.nav  a:hover { color: #eca937  !important; }
 
 ul.nav  a {
-  color: #dadada  !important;
+  color: #fff  !important;
   font-size: 14px;
 }
 
 .navbar-brand { color: #eca937  !important; }
 
 .navbar {
-  margin-bottom: 0px;
+  border-color: #000;
+  padding: 5px 20px;
   background-color: #000;
 }
 
@@ -429,4 +554,10 @@ ul.nav  a {
   font-weight: 300;
   font-size: 20px;
   color: #FFF;
+}
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
