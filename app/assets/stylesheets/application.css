@@ -29,6 +29,10 @@ nav a:visited {
   color: #FFF !important;
 }
 
+.timer-container {
+  padding: 0px;
+}
+
 #start_conversation {
   margin-top: 100px;
 }
@@ -166,6 +170,10 @@ background-color:rgb(247, 245, 240);
   background-color:rgb(237, 234, 223);
   box-shadow: 4px 4px 14px #B1B1B1;
 
+}
+
+fieldset {
+  margin: 5px;
 }
 
 .section-paragraph {

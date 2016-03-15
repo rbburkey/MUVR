@@ -1,82 +1,76 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-offset-1">
 
+				<div class="text-center">
+					<h1>Muvr Meter:</h1>
+					<h1 id="time"></h1>
+					<input type="button" value="start" id="start-timer" class='btn btn-success' >
+					<input type="button" value="reset" id="reset-timer" class='btn btn-warning' >
+					<input type="button" value="stop" id="stop-timer" class='btn btn-danger' >
 
-<div class="timer-container">
-	<div class="charge-button">Time: <span id="time"></span></div>
-	<input type="button" value="start" id="start-timer"  >
-	<input type="button" value="stop" id="stop-timer" >
-	<input type="button" value="reset" id="reset-timer" >
+					<h4>Current Charge:$<span id="total-amount"></span></h4>
 
-	<div>current charge:$<span id="total-amount"></span></div>
+				</div>
+			</div>
+			<div class="col-md-1 text-center">
+			</div>
 
+			<div class="col-md-4 text-center">
+				<h1>Estimate!</h1>
+				<p>Select the scenario</p><br>
+					<form action="" id="rateform" onsubmit="return false;">
+						<div>
+							<div class="cont_order">
+								<fieldset>
+									<label class='radiolabel'><input type="radio"  name="selectedpath" value="Round6" onclick="calculateTotal()" /> MUVR hourly rate $20</label><br/>
+									<label class='radiolabel'><input type="radio"  name="selectedpath" value="Round8" onclick="calculateTotal()" /> 2 MUVRs hourly rate $40</label><br/>
 
+									<br/>
+									<p>
+										<label for='includeorganizer' class="inlinelabel">Include organizer($30)</label>
+										<input type="checkbox" id="includeorganizer" name='includeorganizer' onclick="calculateTotal()" />
+									</p>
+									<!-- <label >Dislocating charges</label>
+									<select id="condition" name='condition' onchange="calculateTotal()">
+									<option value="None">Select conditions</option>
+									<option value="Intercounty">Intercounty($20)</option>
+									<option value="Interstate">Interstate($100)</option>
+								</select> -->
+								<div id="totalPrice"></div>
+							</fieldset>
+						</div>
+					</form>
+			</div>
+			<div class="paypay">
 
-    <div id="wrap">
-        <form action="" id="rateform" onsubmit="return false;">
-        <div>
-            <div class="cont_order">
-               <fieldset>
-                <legend>MUVRstimate!</legend>
-                <label >Select the scenario</label><br>
-                <label class='radiolabel'><input type="radio"  name="selectedpath" value="Round6" onclick="calculateTotal()" />MUVR hourly rate $40</label><br/>
-                <label class='radiolabel'><input type="radio"  name="selectedpath" value="Round8" onclick="calculateTotal()" />2 MUVRs hourly rate $80</label><br/>
+				<%= form_tag charges_path do %>
+				<article>
+					<% if flash[:error].present? %>
+					<div id="error_explanation">
+						<p><%= flash[:error] %></p>
+					</div>
+					<% end %>
+					<label class="amount">
+					</label>
+				</article>
 
-                <br/>
-								<p>
-								<label for='includeorganizer' class="inlinelabel">Include organizer($30)</label>
-							 <input type="checkbox" id="includeorganizer" name='includeorganizer' onclick="calculateTotal()" />
-							 </p>
-                <!-- <label >Dislocating charges</label>
-                <select id="condition" name='condition' onchange="calculateTotal()">
-                <option value="None">Select conditions</option>
-                <option value="Intercounty">Intercounty($20)</option>
-                <option value="Interstate">Interstate($100)</option>
-               </select> -->
-                <div id="totalPrice"></div>
-                </fieldset>
-            </div>
-       </form>
+				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				data-description="Checkout"
+				data-amount="4000"
+				data-locale="auto"></script>
+				<% end %>
+			</div>
+
+		</div>
 	</div>
 </div>
 </div>
-<div class="paypay">
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="5000"
-          data-locale="auto"></script>
-<% end %>
-
-</div>
-
-
 
 <script>
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
 <script>
 
 var muvr_prices = new Array();
@@ -97,99 +91,99 @@ condition_prices["Interstate"]=100;
 
 function getMuvrPrice()
 {
-   var MuvrTypePrice=0;
-   //Get a reference to the form id="rateform"
-   var theForm = document.forms["rateform"];
+	var MuvrTypePrice=0;
+	//Get a reference to the form id="rateform"
+	var theForm = document.forms["rateform"];
 
-   var selectedpath = theForm.elements["selectedpath"];
-   //Here since there are 4 radio buttons selectedpath.length = 4
-   //We loop through each radio buttons
-   for(var i = 0; i < selectedpath.length; i++)
-   {
-       //if the radio button is checked
-       if(selectedpath[i].checked)
-       {
-           //we set MuvrTypePrice to the value of the selected radio button
-           //i.e. if the user choose the 8" cake we set it to 25
-           //by using the muvr_prices array
-           //We get the selected Items value
-           //For example muvr_prices["Round8".value]"
-           MuvrTypePrice = muvr_prices[selectedpath[i].value];
-           //If we get a match then we break out of this loop
-           //No reason to continue if we get a match
-           break;
-       }
-   }
-   //We return the MuvrTypePrice
-   return MuvrTypePrice;
+	var selectedpath = theForm.elements["selectedpath"];
+	//Here since there are 4 radio buttons selectedpath.length = 4
+	//We loop through each radio buttons
+	for(var i = 0; i < selectedpath.length; i++)
+	{
+		//if the radio button is checked
+		if(selectedpath[i].checked)
+		{
+			//we set MuvrTypePrice to the value of the selected radio button
+			//i.e. if the user choose the 8" cake we set it to 25
+			//by using the muvr_prices array
+			//We get the selected Items value
+			//For example muvr_prices["Round8".value]"
+			MuvrTypePrice = muvr_prices[selectedpath[i].value];
+			//If we get a match then we break out of this loop
+			//No reason to continue if we get a match
+			break;
+		}
+	}
+	//We return the MuvrTypePrice
+	return MuvrTypePrice;
 }
 
 
 function ConditionPrice()
 {
-   var conditionPrice=0;
-   //Get a reference to the form id="rateform"
-   var theForm = document.forms["rateform"];
-   //Get a reference to the select id="condition"
-    var selectedCondition = theForm.elements["condition"];
+	var conditionPrice=0;
+	//Get a reference to the form id="rateform"
+	var theForm = document.forms["rateform"];
+	//Get a reference to the select id="condition"
+	var selectedCondition = theForm.elements["condition"];
 
 
-   conditionPrice = condition_prices[selectedCondition.value];
+	conditionPrice = condition_prices[selectedCondition.value];
 
-   //finally we return conditionPrice
-   return conditionPrice;
+	//finally we return conditionPrice
+	return conditionPrice;
 }
 
 //organizerPrice() finds the organizer price based on a check box selection
 function organizerPrice()
 {
-   var organizerPrice=0;
-   //Get a reference to the form id="rateform"
-   var theForm = document.forms["rateform"];
-   //Get a reference to the checkbox id="includeorganizer"
-   var includeorganizer = theForm.elements["includeorganizer"];
+	var organizerPrice=0;
+	//Get a reference to the form id="rateform"
+	var theForm = document.forms["rateform"];
+	//Get a reference to the checkbox id="includeorganizer"
+	var includeorganizer = theForm.elements["includeorganizer"];
 
-   //If they checked the box set organizerPrice to 5
-   if(includeorganizer.checked==true)
-   {
-       organizerPrice=30;
-   }
-   //finally we return the organizerPrice
-   return organizerPrice;
+	//If they checked the box set organizerPrice to 5
+	if(includeorganizer.checked==true)
+	{
+		organizerPrice=30;
+	}
+	//finally we return the organizerPrice
+	return organizerPrice;
 }
 
 function insciptionPrice()
 {
 
-   var inscriptionPrice=0;
+	var inscriptionPrice=0;
 
-   var theForm = document.forms["rateform"];
-   //Get a reference to the checkbox id="includeinscription"
-   var includeInscription = theForm.elements["includeinscription"];
+	var theForm = document.forms["rateform"];
+	//Get a reference to the checkbox id="includeinscription"
+	var includeInscription = theForm.elements["includeinscription"];
 
-   if(includeInscription.checked==true){
-       inscriptionPrice=20;
-   }
-   //finally we return the inscriptionPrice
-   return inscriptionPrice;
+	if(includeInscription.checked==true){
+		inscriptionPrice=20;
+	}
+	//finally we return the inscriptionPrice
+	return inscriptionPrice;
 }
 
 function calculateTotal()
 {
 
-   var MuvrPrice = getMuvrPrice() + ConditionPrice() + organizerPrice();
+	var MuvrPrice = getMuvrPrice() + ConditionPrice() + organizerPrice();
 
-   //display the result
-   var divobj = document.getElementById('totalPrice');
-   divobj.style.display='block';
-   divobj.innerHTML = "Total Price For MUVR $"+MuvrPrice;
+	//display the result
+	var divobj = document.getElementById('totalPrice');
+	divobj.style.display='block';
+	divobj.innerHTML = "Total Price For MUVR $"+MuvrPrice;
 
 }
 
 function hideTotal()
 {
-   var divobj = document.getElementById('totalPrice');
-   divobj.style.display='none';
+	var divobj = document.getElementById('totalPrice');
+	divobj.style.display='none';
 }
 
 </script>
